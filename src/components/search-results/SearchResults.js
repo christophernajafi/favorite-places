@@ -1,7 +1,9 @@
 import React from "react";
 
-let results = [];
-// let results = [0];
+let results;
+results = [];
+// results = dummySearchResults
+// eslint-disable-next-line
 const dummySearchResults = [
 	{
 		name: "",
@@ -9,6 +11,22 @@ const dummySearchResults = [
 		urlPic: ""
 	}
 ];
+
+// const resultReturn = {
+// 	return (
+// 		<ul>
+
+// 		map.results(
+// 			result=> {
+// 				return (
+// 					<li>{result}</li>
+// 				)
+// 			}
+// 		)
+
+// 		</ul>
+// 	)
+// }
 
 const SearchResults = () => {
 	return results.length ? <div>RESULTS</div> : <div></div>;

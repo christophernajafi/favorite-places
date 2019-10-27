@@ -16,6 +16,10 @@ const Navbar = () => {
 					Search
 				</button>
 			</form>
+			{/* <ul>
+				<li>Login</li>
+				<li>Register</li>
+			</ul> */}
 		</nav>
 	);
 };
