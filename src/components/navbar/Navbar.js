@@ -8,17 +8,17 @@ const Navbar = () => {
 				Favorite Places
 			</a>
 
-			<div class="collapse navbar-collapse" id="navbarNav">
+			<div className="collapse navbar-collapse" id="navbarNav">
 				<ul className="navbar-nav">
 					<li className="nav-item">
 						{/* eslint-disable-next-line */}
-						<a class="nav-link" href="#">
+						<a className="nav-link" href="#">
 							Login
 						</a>
 					</li>
 					<li className="nav-item">
 						{/* eslint-disable-next-line */}
-						<a class="nav-link" href="#">
+						<a className="nav-link" href="#">
 							Register
 						</a>
 					</li>
