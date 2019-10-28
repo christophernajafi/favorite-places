@@ -43,13 +43,12 @@ const dummySearchResults = [
 results = dummySearchResults;
 
 const SearchResults = () => {
-	console.log(results);
 	return results.length ? (
 		<div className="container mt-5">
 			<ul className="list-group mb-4">
 				{results.map((result) => (
 					<li key={result.id} className="list-group-item">
-						<SingleSearchResult results={result} />
+						<SingleSearchResult result={result} />
 					</li>
 				))}
 			</ul>

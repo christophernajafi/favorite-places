@@ -1,7 +1,7 @@
 import React from "react";
 
 const SingleSearchResult = (props) => {
-	const { name, image_url, display_address, is_closed } = props.results;
+	const { name, image_url, display_address, is_closed } = props.result;
 
 	return (
 		<div>
