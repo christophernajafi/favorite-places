@@ -7,8 +7,8 @@ const SingleSearchResult = () => {
 export default SingleSearchResult;
 
 /*
-Name
-Address (street, city, state, zip code)
-Category
-Photo
+name
+image_url
+display_address
+is_closed
 */
