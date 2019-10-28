@@ -3,10 +3,10 @@ import axios from "axios";
 
 class SearchBar extends Component {
 	state = {
-		latitude: "",
-		longitude: ""
-		// searchQuery: "",
-		// results: [],
+		latitude: "40.712776",
+		longitude: "-74.005974",
+		searchQuery: "",
+		results: []
 		// singleResult: {}
 	};
 
@@ -17,6 +17,8 @@ class SearchBar extends Component {
 			let client_id = "POJRSULYK3BL2FVPTOFBLX40F0B3PMCPCPEF2SHMSQWYEGFT";
 			let client_secret = "PNLMONJFCXLUUVSF5SB22SAFI5VK3UZZB4OVW4DW1D13OKTN";
 			let v = "20140303";
+
+			console.log("ll: ", ll);
 
 			const queryTemplate = `https://api.foursquare.com/v2/venues/search?query=${query}&ll=${ll}&client_id=${client_id}&client_secret=${client_secret}&v=${v}`;
 			const response = await axios.get(queryTemplate);
@@ -30,16 +32,36 @@ class SearchBar extends Component {
 		}
 	};
 
+	onChange = (event) => {
+		this.setState({ [event.target.name]: event.target.value });
+	};
+
+	onSubmit = (event) => {
+		// console.log(event);
+		event.preventDefault();
+		if (!this.state.searchQuery.length) {
+			console.log("Please enter something");
+		} else {
+			this.getVenues();
+		}
+	};
+
+	// need to clear search bar after clicking submit
+
 	render() {
+		const { searchQuery } = this.state;
 		return (
 			<div>
-				<form className="form-inline">
+				<form className="form-inline" onSubmit={this.onSubmit}>
 					<input
 						className="form-control mr-sm-2"
 						type="search"
-						placeholder="Search"
-						aria-label="Search"
-					></input>
+						placeholder=""
+						aria-label=""
+						onChange={this.onChange}
+						defaultValue={searchQuery}
+						name="searchQuery"
+					/>
 					<button
 						className="btn btn-outline-success my-2 my-sm-0"
 						type="submit"
