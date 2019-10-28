@@ -1,35 +1,58 @@
 import React from "react";
+import SingleSearchResult from "./single-result/SingleSearchResult";
 
 let results;
 results = [];
-// results = dummySearchResults
+
 // eslint-disable-next-line
 const dummySearchResults = [
 	{
-		name: "",
-		description: "",
-		urlPic: ""
+		name: "King Pizza",
+		image_url:
+			"https://www.readyseteat.com/sites/g/files/qyyrlu501/files/uploadedImages/img_6941_6018.JPEG",
+		display_address: "123 Sesame St, New York, NY",
+		is_closed: "Open"
+	},
+	{
+		name: "King Pizza",
+		image_url:
+			"https://www.readyseteat.com/sites/g/files/qyyrlu501/files/uploadedImages/img_6941_6018.JPEG",
+		display_address: "123 Sesame St, New York, NY",
+		is_closed: "Open"
+	},
+	{
+		name: "King Pizza",
+		image_url:
+			"https://www.readyseteat.com/sites/g/files/qyyrlu501/files/uploadedImages/img_6941_6018.JPEG",
+		display_address: "123 Sesame St, New York, NY",
+		is_closed: "Open"
+	},
+	{
+		name: "King Pizza",
+		image_url:
+			"https://www.readyseteat.com/sites/g/files/qyyrlu501/files/uploadedImages/img_6941_6018.JPEG",
+		display_address: "123 Sesame St, New York, NY",
+		is_closed: "Open"
 	}
 ];
 
-// const resultReturn = {
-// 	return (
-// 		<ul>
-
-// 		map.results(
-// 			result=> {
-// 				return (
-// 					<li>{result}</li>
-// 				)
-// 			}
-// 		)
-
-// 		</ul>
-// 	)
-// }
+results = dummySearchResults;
 
 const SearchResults = () => {
-	return results.length ? <div>RESULTS</div> : <div></div>;
+	console.log(results);
+	return results.length ? (
+		<div>
+			<ul>
+				{results.map((result) => (
+					<li>
+						<SingleSearchResult results={result} />
+					</li>
+				))}
+			</ul>
+		</div>
+	) : (
+		<div></div>
+	);
 };
 
 export default SearchResults;
