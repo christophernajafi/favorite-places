@@ -5,3 +5,10 @@ const SingleSearchResult = () => {
 };
 
 export default SingleSearchResult;
+
+/*
+Name
+Address (street, city, state, zip code)
+Category
+Photo
+*/

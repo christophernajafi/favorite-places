@@ -8,7 +8,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Redux
 - Firebase Authentication
 - Cloud Firestore
-- Foursquare API
+- Yelp Fusion API
 - Mapbox API
 
 ## Features
