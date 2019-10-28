@@ -7,6 +7,7 @@ results = [];
 // eslint-disable-next-line
 const dummySearchResults = [
 	{
+		id: "1",
 		name: "King Pizza",
 		image_url:
 			"https://www.readyseteat.com/sites/g/files/qyyrlu501/files/uploadedImages/img_6941_6018.JPEG",
@@ -14,6 +15,7 @@ const dummySearchResults = [
 		is_closed: "Open"
 	},
 	{
+		id: "2",
 		name: "King Pizza",
 		image_url:
 			"https://www.readyseteat.com/sites/g/files/qyyrlu501/files/uploadedImages/img_6941_6018.JPEG",
@@ -21,6 +23,7 @@ const dummySearchResults = [
 		is_closed: "Open"
 	},
 	{
+		id: "3",
 		name: "King Pizza",
 		image_url:
 			"https://www.readyseteat.com/sites/g/files/qyyrlu501/files/uploadedImages/img_6941_6018.JPEG",
@@ -28,6 +31,7 @@ const dummySearchResults = [
 		is_closed: "Open"
 	},
 	{
+		id: "4",
 		name: "King Pizza",
 		image_url:
 			"https://www.readyseteat.com/sites/g/files/qyyrlu501/files/uploadedImages/img_6941_6018.JPEG",
@@ -41,10 +45,10 @@ results = dummySearchResults;
 const SearchResults = () => {
 	console.log(results);
 	return results.length ? (
-		<div>
-			<ul>
+		<div className="container mt-5">
+			<ul className="list-group mb-4">
 				{results.map((result) => (
-					<li>
+					<li key={result.id} className="list-group-item">
 						<SingleSearchResult results={result} />
 					</li>
 				))}
