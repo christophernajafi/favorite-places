@@ -13,8 +13,7 @@ class Location extends Component {
 		navigator.geolocation.getCurrentPosition((response) => {
 			const { latitude, longitude } = response.coords;
 			this.setState({ latitude, longitude });
-
-			console.log("lat and long", this.state);
+			console.log("Your current location is", this.state);
 		});
 	};
 
