@@ -20,7 +20,8 @@ router.get(
 			axios.defaults.headers.common["Authorization"] = `Bearer ${yelpKey}`;
 
 			const response = await axios.get(queryStr);
-			console.log("response", response.data.businesses[0]);
+			// console.log("response", response.data.businesses[0]);
+			res.json(response);
 		} catch {
 			// console.error(err.message);
 			res.status(500).send("Server Error");

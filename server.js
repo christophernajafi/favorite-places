@@ -11,6 +11,12 @@ app.use(express.json({ extended: false }));
 
 // app.get("/", (req, res) => res.send(`<h1>Server started on port ${PORT}</h1>`));
 
+// CORS
+// app.use("/api/yelp", (req, res, next) => {
+// 	res.header("Access-Control-Allow-Origin", "*");
+// 	next();
+// });
+
 // Define routes
 app.use("/api/yelp", require("./routes/yelp"));
 // app.use("/api/users", require("./routes/users"));

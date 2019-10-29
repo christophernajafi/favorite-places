@@ -1,5 +1,6 @@
 import React from "react";
 import SingleSearchResult from "./single-result/SingleSearchResult";
+// import axios from "axios";
 
 let results;
 results = [];
