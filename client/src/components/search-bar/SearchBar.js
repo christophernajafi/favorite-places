@@ -6,6 +6,7 @@ class SearchBar extends Component {
 		latitude: "40.712776",
 		longitude: "-74.005974",
 		searchQuery: "",
+		searchLocation: "",
 		results: []
 		// singleResult: {}
 	};
@@ -49,18 +50,27 @@ class SearchBar extends Component {
 	// need to clear search bar after clicking submit
 
 	render() {
-		const { searchQuery } = this.state;
+		const { searchQuery, searchLocation } = this.state;
 		return (
 			<div>
 				<form className="form-inline" onSubmit={this.onSubmit}>
 					<input
 						className="form-control mr-sm-2"
 						type="search"
-						placeholder=""
+						placeholder="Find ..."
 						aria-label=""
 						onChange={this.onChange}
 						defaultValue={searchQuery}
 						name="searchQuery"
+					/>
+					<input
+						className="form-control mr-sm-2"
+						type="search"
+						placeholder="Near ..."
+						aria-label=""
+						onChange={this.onChange}
+						defaultValue={searchLocation}
+						name="searchLocation"
 					/>
 					<button
 						className="btn btn-outline-success my-2 my-sm-0"

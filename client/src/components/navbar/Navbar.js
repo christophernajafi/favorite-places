@@ -1,5 +1,5 @@
 import React from "react";
-import SearchBar from "../search-bar/SearchBar";
+// import SearchBar from "../search-bar/SearchBar";
 
 const Navbar = () => {
 	return (
@@ -25,7 +25,7 @@ const Navbar = () => {
 					</li>
 				</ul>
 			</div>
-			<div>{<SearchBar />}</div>
+			{/* <div>{<SearchBar />}</div> */}
 		</nav>
 	);
 };
