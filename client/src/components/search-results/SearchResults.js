@@ -1,6 +1,6 @@
-import React from "react";
+import React, { Component } from "react";
 import SingleSearchResult from "./single-result/SingleSearchResult";
-// import axios from "axios";
+import axios from "axios";
 
 let results;
 results = [];
@@ -43,20 +43,35 @@ const dummySearchResults = [
 
 results = dummySearchResults;
 
-const SearchResults = () => {
-	return results.length ? (
-		<div className="container mt-5">
-			<ul className="list-group mb-4">
-				{results.map((result) => (
-					<li key={result.id} className="list-group-item">
-						<SingleSearchResult result={result} />
-					</li>
-				))}
-			</ul>
-		</div>
-	) : (
-		<div></div>
-	);
-};
+class SearchResults extends Component {
+	getResults = async () => {
+		try {
+			const response = await axios.get("/api/yelp");
+			console.log("Search Results: ", response);
+		} catch (err) {
+			console.log(err.message);
+		}
+	};
+
+	componentDidMount() {
+		this.getResults();
+	}
+
+	render() {
+		return results.length ? (
+			<div className="container mt-5">
+				<ul className="list-group mb-4">
+					{results.map((result) => (
+						<li key={result.id} className="list-group-item">
+							<SingleSearchResult result={result} />
+						</li>
+					))}
+				</ul>
+			</div>
+		) : (
+			<div></div>
+		);
+	}
+}
 
 export default SearchResults;
