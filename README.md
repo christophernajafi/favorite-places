@@ -7,8 +7,8 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - React
 - Redux
 - Bootstrap
-- Firebase Authentication
-- Cloud Firestore
+- Authentication with JWT
+- MongoDB
 - Yelp Fusion API
 - Mapbox API
 
@@ -22,5 +22,6 @@ A Single-Page Application that enables a user to search for venues, add them to 
 
 ## Future Features
 
+- Autocomplete in search bar
 - Turn into a PWA
 - Dark mode
