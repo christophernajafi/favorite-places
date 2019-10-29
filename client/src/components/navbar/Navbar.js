@@ -1,5 +1,4 @@
 import React from "react";
-// import SearchBar from "../search-bar/SearchBar";
 
 const Navbar = () => {
 	return (
@@ -14,18 +13,17 @@ const Navbar = () => {
 					<li className="nav-item">
 						{/* eslint-disable-next-line */}
 						<a className="nav-link" href="#">
-							Login
+							Log In
 						</a>
 					</li>
 					<li className="nav-item">
 						{/* eslint-disable-next-line */}
 						<a className="nav-link" href="#">
-							Register
+							Sign Up
 						</a>
 					</li>
 				</ul>
 			</div>
-			{/* <div>{<SearchBar />}</div> */}
 		</nav>
 	);
 };

@@ -11,8 +11,20 @@ router.get(
 
 	async (req, res, err) => {
 		try {
-			const endPoint = "https://api.yelp.com/v3/businesses/search";
+			const endPoint = "https://api.yelp.com/v3/businesses/search?";
 			const yelpKey = process.env.YELP_API_KEY;
+
+			// term
+			let terms = "pizza hamburger burrito";
+			let queryTerms = terms.split(" ").join("+");
+			let qTerm = "term=" + queryTerms;
+			console.log("term: ", qTerm);
+
+			// location
+			let location = "new york ny";
+			let locationTerms = location.split(" ").join("+");
+			let lTerm = "location=" + locationTerms;
+			console.log("location: ", lTerm);
 
 			let queryStr =
 				"https://api.yelp.com/v3/businesses/search?location=cranford&term=pizza";

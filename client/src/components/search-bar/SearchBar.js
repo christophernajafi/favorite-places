@@ -43,7 +43,9 @@ class SearchBar extends Component {
 		if (!this.state.searchQuery.length) {
 			console.log("Please enter something");
 		} else {
-			this.getVenues();
+			// this.getVenues();
+			console.log("terms: ", this.state.searchQuery);
+			console.log("location: ", this.state.searchLocation);
 		}
 	};
 
