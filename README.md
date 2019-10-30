@@ -23,5 +23,8 @@ A Single-Page Application that enables a user to search for venues, add them to 
 ## Future Features
 
 - Autocomplete in search bar
+- Sign up with Facebook
+- Sign up with Google
+- Weather report for a location
 - Turn into a PWA
 - Dark mode

@@ -5,6 +5,8 @@ import axios from "axios";
  */
 
 const SET_RESULTS = "SET_RESULTS";
+const SET_LOCATION = "SET_LOCATION";
+const SET_TERMS = "SET_TERMS";
 
 /**
  * ACTION CREATORS
