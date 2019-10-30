@@ -31,6 +31,10 @@ export const getSearchResults = () => async (dispatch) => {
  */
 
 const initialState = {
+	latitude: "",
+	longitude: "",
+	searchTerms: "",
+	searchLocation: "",
 	searchResults: []
 };
 

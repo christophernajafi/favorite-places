@@ -12,14 +12,7 @@ router.get(
 	async (req, res, err) => {
 		try {
 			const endPoint = "https://api.yelp.com/v3/businesses/search?";
-			const yelpKey = process.env.YELP_API_KEY;
-
-			// term
-			let terms = "art museums";
-			// let terms = req.query.query;
-			let queryTerms = terms.split(" ").join("+");
-			let qTerm = "term=" + queryTerms;
-			console.log("term: ", qTerm);
+			const yelpApiKey = process.env.YELP_API_KEY;
 
 			// location
 			let location = "new york ny";
@@ -27,6 +20,13 @@ router.get(
 			let locationTerms = location.split(" ").join("+");
 			let lTerm = "location=" + locationTerms;
 			console.log("location: ", lTerm);
+
+			// term
+			let terms = "art museums";
+			// let terms = req.query.query;
+			let queryTerms = terms.split(" ").join("+");
+			let qTerm = "term=" + queryTerms;
+			console.log("term: ", qTerm);
 
 			let queryStr = endPoint + lTerm + "&" + qTerm;
 			console.log("query: ", queryStr);
@@ -37,7 +37,7 @@ router.get(
 			// let queryStr =
 			// 	"https://api.yelp.com/v3/businesses/search?location=cranford&term=pizza";
 
-			axios.defaults.headers.common["Authorization"] = `Bearer ${yelpKey}`;
+			axios.defaults.headers.common["Authorization"] = `Bearer ${yelpApiKey}`;
 
 			const { data } = await axios.get(queryStr);
 			// console.log("response", data.businesses[0]);
