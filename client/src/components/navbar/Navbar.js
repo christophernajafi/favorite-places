@@ -1,4 +1,5 @@
 import React from "react";
+// import SearchBar from "../search-bar/SearchBar";
 
 const Navbar = () => {
 	return (
@@ -10,6 +11,9 @@ const Navbar = () => {
 
 			<div className="collapse navbar-collapse" id="navbarNav">
 				<ul className="navbar-nav">
+					{/* <li className="nav-item">
+						<SearchBar />
+					</li> */}
 					<li className="nav-item">
 						{/* eslint-disable-next-line */}
 						<a className="nav-link" href="#">
