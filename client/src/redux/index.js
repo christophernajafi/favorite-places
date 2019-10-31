@@ -1,6 +1,10 @@
-import { combineReducers } from "redux";
+import { combineReducers, createStore } from "redux";
 import searchResultsReducer from "./searchResultsReducer";
 
-export default combineReducers({
+const reducer = combineReducers({
 	search: searchResultsReducer
 });
+
+const store = createStore(reducer);
+
+export default store;
