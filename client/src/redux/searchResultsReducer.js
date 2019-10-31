@@ -13,22 +13,27 @@ const SET_LAT_LONG = "SET_LAT_LONG";
  * ACTION CREATORS
  */
 
-const setSearchResults = (results) => {
-	type: SET_SEARCH_RESULTS;
-	results;
-};
+// eslint-disable-next-line
+const setSearchResults = (results) => ({
+	type: SET_SEARCH_RESULTS,
+	results
+});
 
-const setSearchLocation = (location) => {
-	type: SET_SEARCH_LOCATION;
-};
+// eslint-disable-next-line
+const setSearchLocation = (location) => ({
+	type: SET_SEARCH_LOCATION,
+	location
+});
 
-const setSearchTerms = (terms) => {
-	type: SET_SEARCH_TERMS;
-};
+// eslint-disable-next-line
+const setSearchTerms = (terms) => ({
+	type: SET_SEARCH_TERMS
+});
 
-const setLatLong = () => {
-	type: SET_LAT_LONG;
-};
+// eslint-disable-next-line
+const setLatLong = () => ({
+	type: SET_LAT_LONG
+});
 
 /**
  * ACTION THUNKS
