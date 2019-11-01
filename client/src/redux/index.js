@@ -8,16 +8,23 @@ const reducer = combineReducers({
 	search: searchResultsReducer
 });
 
+// all middleware
 let middleware;
 
+// production middleware
 const prodMiddlewares = [thunkMiddleware];
 
+// development-only middleware
 const devMiddlewares = [];
 
 // development
 if (process.env.NODE_ENV !== "production") {
 	middleware = composeWithDevTools(
-		applyMiddleware(...prodMiddlewares, ...devMiddlewares)
+		applyMiddleware(
+			...prodMiddlewares,
+			...devMiddlewares,
+			createLogger({ collapsed: true })
+		)
 	);
 	// production
 } else {
