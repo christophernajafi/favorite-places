@@ -1,5 +1,5 @@
 {
-	"name": "favorite-places",
+	"name": "favorite-places-server",
 	"version": "1.0.0",
 	"description": "A Single-Page Application that enables a user to search for venues, add them to a list, and view their locations on a map.",
 	"main": "server.js",

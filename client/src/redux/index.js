@@ -1,6 +1,6 @@
 import { combineReducers, createStore, applyMiddleware } from "redux";
-import { createLogger } from "redux-logger";
 import thunkMiddleware from "redux-thunk";
+import { createLogger } from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
 import searchResultsReducer from "./searchResultsReducer";
 
@@ -17,8 +17,8 @@ const productionMiddleware = [thunkMiddleware];
 // development-only middleware
 const developmentMiddleware = [];
 
-// development
 if (process.env.NODE_ENV !== "production") {
+	// development
 	middleware = composeWithDevTools(
 		applyMiddleware(
 			...productionMiddleware,
@@ -26,8 +26,8 @@ if (process.env.NODE_ENV !== "production") {
 			createLogger({ collapsed: true })
 		)
 	);
-	// production
 } else {
+	// production
 	middleware = applyMiddleware(...productionMiddleware);
 }
 

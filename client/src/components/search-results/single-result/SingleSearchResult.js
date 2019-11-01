@@ -2,7 +2,7 @@ import React from "react";
 import "./single-result.css";
 
 const SingleSearchResult = (props) => {
-	const { name, image_url, location, display_phone, is_closed } = props.result;
+	const { name, image_url, location, display_phone } = props.result;
 	const { display_address } = location;
 
 	// console.log(typeof is_closed);
@@ -17,7 +17,6 @@ const SingleSearchResult = (props) => {
 			<br />
 			Phone: {display_phone}
 			<br />
-			Open Right Now: {is_closed ? "No" : "Yes"}
 		</div>
 	);
 };
