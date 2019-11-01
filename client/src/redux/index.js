@@ -8,32 +8,22 @@ const reducer = combineReducers({
 	search: searchResultsReducer
 });
 
-// const middleware
+let middleware;
 
-// const devMiddlewares=[]
+const prodMiddlewares = [thunkMiddleware];
 
-// const prodMiddlewares=[]
+const devMiddlewares = [];
 
-// if (process.env.NODE_ENV !== 'production') {
-// 	middleware = composeWithDevTools(
-// 			applyMiddleware(
-// 					thunk,
-// 					cartMiddleware,
-// 					session,
-// 					logger(),
-// 					queryMiddleware(getQueries, getEntities)
-// 			)
-// 	)
-// } else {
-// 	middleware = applyMiddleware(
-// 			thunk,
-// 			cartMiddleware,
-// 			session,
-// 			queryMiddleware(getQueries, getEntities)
-// 	)
-// }
+// development
+if (process.env.NODE_ENV !== "production") {
+	middleware = composeWithDevTools(
+		applyMiddleware(...prodMiddlewares, ...devMiddlewares)
+	);
+	// production
+} else {
+	middleware = applyMiddleware(...prodMiddlewares);
+}
 
-const store = createStore(reducer);
-// const store = createStore(reducer, middleware);
+const store = createStore(reducer, middleware);
 
 export default store;
