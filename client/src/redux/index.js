@@ -12,23 +12,23 @@ const reducer = combineReducers({
 let middleware;
 
 // production middleware
-const prodMiddlewares = [thunkMiddleware];
+const productionMiddleware = [thunkMiddleware];
 
 // development-only middleware
-const devMiddlewares = [];
+const developmentMiddleware = [];
 
 // development
 if (process.env.NODE_ENV !== "production") {
 	middleware = composeWithDevTools(
 		applyMiddleware(
-			...prodMiddlewares,
-			...devMiddlewares,
+			...productionMiddleware,
+			...developmentMiddleware,
 			createLogger({ collapsed: true })
 		)
 	);
 	// production
 } else {
-	middleware = applyMiddleware(...prodMiddlewares);
+	middleware = applyMiddleware(...productionMiddleware);
 }
 
 const store = createStore(reducer, middleware);
