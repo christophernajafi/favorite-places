@@ -14,9 +14,9 @@ const SET_LAT_LONG = "SET_LAT_LONG";
  */
 
 // eslint-disable-next-line
-const setSearchResults = (results) => ({
+const setSearchResults = (searchResults) => ({
 	type: SET_SEARCH_RESULTS,
-	results
+	searchResults
 });
 
 // eslint-disable-next-line
@@ -47,7 +47,7 @@ export const getSearchResults = (terms, location) => async (dispatch) => {
 				location
 			}
 		});
-		console.log("data from redux: ", data);
+		console.log("getSearchResults ", data);
 		dispatch(setSearchResults(data));
 	} catch (err) {
 		console.log(err);

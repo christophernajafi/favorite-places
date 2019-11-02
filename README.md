@@ -1,4 +1,4 @@
-# Favorite Places v.1.0
+# Favorite Places v1.0
 
 A Single-Page Application that enables a user to search for venues, add them to a list, and view their locations on a map.
 
