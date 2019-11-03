@@ -1,30 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import axios from "axios";
+import { getSearchResults } from "../../redux/searchResultsReducer";
 
 class SearchBar extends Component {
 	state = {
-		latitude: "40.712776",
-		longitude: "-74.005974",
 		searchTerms: "",
-		searchLocation: "",
-		results: []
-	};
-
-	getVenues = async () => {
-		try {
-			const { data } = await axios.get("/api/yelp", {
-				params: {
-					terms: this.state.searchTerms,
-					location: this.state.searchLocation
-				}
-			});
-			console.log("t: ", this.state.searchTerms);
-			console.log("l: ", this.state.searchLocation);
-			console.log("search bar: ", data);
-		} catch (err) {
-			console.error(err);
-		}
+		searchLocation: ""
 	};
 
 	onChange = (event) => {
@@ -32,12 +13,14 @@ class SearchBar extends Component {
 	};
 
 	onSubmit = (event) => {
-		// console.log(event);
 		event.preventDefault();
 		if (!this.state.searchTerms.length) {
 			console.log("Please enter something");
 		} else {
-			this.getVenues();
+			this.props.getSearchResults(
+				this.state.searchTerms,
+				this.state.searchLocation
+			);
 			console.log("terms: ", this.state.searchTerms);
 			console.log("location: ", this.state.searchLocation);
 		}
@@ -82,13 +65,14 @@ class SearchBar extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		//
+		searchResults: state.searchResults
 	};
 };
 
 const mapDispatchToProps = (dispatch) => {
 	return {
-		//
+		getSearchResults: (terms, location) =>
+			dispatch(getSearchResults(terms, location))
 	};
 };
 
@@ -96,4 +80,3 @@ export default connect(
 	mapStateToProps,
 	mapDispatchToProps
 )(SearchBar);
-// export default SearchBar;

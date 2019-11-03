@@ -15,24 +15,25 @@ router.get(
 			const yelpApiKey = process.env.YELP_API_KEY;
 
 			// location
-			let location = "new york ny";
-			// let location = req.query.location;
+			// let location = "new york ny";
+			let location = req.query.location;
 			let locationTerms = location.split(" ").join("+");
 			let lTerm = "location=" + locationTerms;
-			console.log("location: ", lTerm);
+			// console.log("location: ", lTerm);
 
 			// term
-			let terms = "art museums";
-			// let terms = req.query.query;
+			// let terms = "art museums";
+			let terms = req.query.terms;
 			let queryTerms = terms.split(" ").join("+");
 			let qTerm = "term=" + queryTerms;
-			console.log("term: ", qTerm);
+			// console.log("term: ", qTerm);
 
 			let queryStr = endPoint + lTerm + "&" + qTerm;
-			console.log("query: ", queryStr);
+			// console.log("query: ", queryStr);
 
-			console.log("req.query.terms: ", req.query.terms);
-			console.log("req.query.location: ", req.query.location);
+			// console.log("req.query.terms: ", req.query.terms);
+			// console.log("req.query.location: ", req.query.location);
+			// console.log("REQ.QUERY: ", req.query);
 
 			// let queryStr =
 			// 	"https://api.yelp.com/v3/businesses/search?location=cranford&term=pizza";

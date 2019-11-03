@@ -47,8 +47,8 @@ export const getSearchResults = (terms, location) => async (dispatch) => {
 				location
 			}
 		});
-		console.log("getSearchResults ", data);
-		dispatch(setSearchResults(data));
+		console.log("getSearchResults ", data.businesses);
+		dispatch(setSearchResults(data.businesses));
 	} catch (err) {
 		console.log(err);
 	}
@@ -75,6 +75,7 @@ const searchResultsReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case SET_SEARCH_RESULTS:
 			newState.searchResults = [...action.searchResults];
+			console.log("NEWSTATE: ", newState);
 			return newState;
 		default:
 			return state;
