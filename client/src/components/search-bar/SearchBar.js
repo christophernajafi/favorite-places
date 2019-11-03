@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import axios from "axios";
 
 class SearchBar extends Component {
@@ -8,7 +9,6 @@ class SearchBar extends Component {
 		searchTerms: "",
 		searchLocation: "",
 		results: []
-		// singleResult: {}
 	};
 
 	getVenues = async () => {
@@ -80,4 +80,20 @@ class SearchBar extends Component {
 	}
 }
 
-export default SearchBar;
+const mapStateToProps = (state) => {
+	return {
+		//
+	};
+};
+
+const mapDispatchToProps = (dispatch) => {
+	return {
+		//
+	};
+};
+
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(SearchBar);
+// export default SearchBar;
