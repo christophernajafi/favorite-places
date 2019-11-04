@@ -11,25 +11,25 @@ router.get(
 
 	async (req, res, err) => {
 		try {
-			const endPoint = "https://api.yelp.com/v3/businesses/search?";
+			const endpoint = "https://api.yelp.com/v3/businesses/search?";
 			const yelpApiKey = process.env.YELP_API_KEY;
 
 			// location
-			let reqLocation = req.query.location;
-			let strLocation = reqLocation.split(" ").join("+");
-			let location = "location=" + strLocation;
+			const reqLocation = req.query.location;
+			const strLocation = reqLocation.split(" ").join("+");
+			const location = "location=" + strLocation;
 
 			// term
-			let reqTerms = req.query.terms;
-			let strTerms = reqTerms.split(" ").join("+");
-			let term = "term=" + strTerms;
+			const reqTerms = req.query.terms;
+			const strTerms = reqTerms.split(" ").join("+");
+			const term = "term=" + strTerms;
 
-			let queryStr = endPoint + location + "&" + term;
+			const fullEndpoint = endpoint + location + "&" + term;
 
 			axios.defaults.headers.common["Authorization"] = `Bearer ${yelpApiKey}`;
 
-			const { data } = await axios.get(queryStr);
-			console.log("response", data.businesses[0]);
+			const { data } = await axios.get(fullEndpoint);
+			// console.log("response", data.businesses[0]);
 			res.status(200).json(data);
 		} catch {
 			console.error(err.message);
