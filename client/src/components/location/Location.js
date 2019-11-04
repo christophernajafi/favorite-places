@@ -4,9 +4,6 @@ class Location extends Component {
 	state = {
 		latitude: "",
 		longitude: ""
-		// searchQuery: "",
-		// results: [],
-		// singleResult: {}
 	};
 
 	getLocation = () => {

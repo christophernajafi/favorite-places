@@ -21,8 +21,8 @@ class SearchBar extends Component {
 				this.state.searchTerms,
 				this.state.searchLocation
 			);
-			console.log("terms: ", this.state.searchTerms);
-			console.log("location: ", this.state.searchLocation);
+			// console.log("terms: ", this.state.searchTerms);
+			// console.log("location: ", this.state.searchLocation);
 		}
 	};
 

@@ -15,28 +15,16 @@ router.get(
 			const yelpApiKey = process.env.YELP_API_KEY;
 
 			// location
-			// let location = "new york ny";
 			let location = req.query.location;
 			let locationTerms = location.split(" ").join("+");
 			let lTerm = "location=" + locationTerms;
-			// console.log("location: ", lTerm);
 
 			// term
-			// let terms = "art museums";
 			let terms = req.query.terms;
 			let queryTerms = terms.split(" ").join("+");
 			let qTerm = "term=" + queryTerms;
-			// console.log("term: ", qTerm);
 
 			let queryStr = endPoint + lTerm + "&" + qTerm;
-			// console.log("query: ", queryStr);
-
-			// console.log("req.query.terms: ", req.query.terms);
-			// console.log("req.query.location: ", req.query.location);
-			// console.log("REQ.QUERY: ", req.query);
-
-			// let queryStr =
-			// 	"https://api.yelp.com/v3/businesses/search?location=cranford&term=pizza";
 
 			axios.defaults.headers.common["Authorization"] = `Bearer ${yelpApiKey}`;
 
@@ -44,7 +32,7 @@ router.get(
 			console.log("response", data.businesses[0]);
 			res.status(200).json(data);
 		} catch {
-			// console.error(err.message);
+			console.error(err.message);
 			res.status(500).send("Server Error");
 		}
 	}
