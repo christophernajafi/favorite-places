@@ -7,7 +7,15 @@ import "./front-page.css";
 const FrontPage = (props) => {
 	return (
 		<Fragment>
-			{props.searchResults.length ? <SearchResults /> : <SearchBar />}
+			{props.searchResults.length ? (
+				<SearchResults />
+			) : (
+				<div className="d-flex justify-content-center align-items-center">
+					<div>
+						<SearchBar />
+					</div>
+				</div>
+			)}
 		</Fragment>
 	);
 };
