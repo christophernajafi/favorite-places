@@ -1,19 +1,17 @@
 import React, { Fragment } from "react";
 import "./App.css";
 import Navbar from "./components/navbar/Navbar";
-import SearchResults from "./components/search-results/SearchResults";
-import SearchBar from "./components/search-bar/SearchBar";
 import Location from "./components/location/Location";
+import FrontPage from "./components/front-page/FrontPage";
 
-function App() {
+const App = () => {
 	return (
 		<Fragment>
 			<Navbar />
-			<SearchBar />
-			<SearchResults />
+			<FrontPage />
 			<Location />
 		</Fragment>
 	);
-}
+};
 
 export default App;
