@@ -13,7 +13,6 @@ const SET_LAT_LONG = "SET_LAT_LONG";
  * ACTION CREATORS
  */
 
-// eslint-disable-next-line
 const setSearchResults = (searchResults) => ({
 	type: SET_SEARCH_RESULTS,
 	searchResults
@@ -61,9 +60,9 @@ export const getSearchResults = (terms, location) => async (dispatch) => {
 const initialState = {
 	latitude: "",
 	longitude: "",
-	searchTerms: "",
 	searchLocation: "",
-	searchResults: []
+	searchResults: [],
+	searchTerms: ""
 };
 
 /**
@@ -75,7 +74,6 @@ const searchResultsReducer = (state = initialState, action) => {
 	switch (action.type) {
 		case SET_SEARCH_RESULTS:
 			newState.searchResults = [...action.searchResults];
-			console.log("NEWSTATE: ", newState);
 			return newState;
 		default:
 			return state;
