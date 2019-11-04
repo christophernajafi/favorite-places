@@ -15,16 +15,16 @@ router.get(
 			const yelpApiKey = process.env.YELP_API_KEY;
 
 			// location
-			let location = req.query.location;
-			let locationTerms = location.split(" ").join("+");
-			let lTerm = "location=" + locationTerms;
+			let reqLocation = req.query.location;
+			let strLocation = reqLocation.split(" ").join("+");
+			let location = "location=" + strLocation;
 
 			// term
-			let terms = req.query.terms;
-			let queryTerms = terms.split(" ").join("+");
-			let qTerm = "term=" + queryTerms;
+			let reqTerms = req.query.terms;
+			let strTerms = reqTerms.split(" ").join("+");
+			let term = "term=" + strTerms;
 
-			let queryStr = endPoint + lTerm + "&" + qTerm;
+			let queryStr = endPoint + location + "&" + term;
 
 			axios.defaults.headers.common["Authorization"] = `Bearer ${yelpApiKey}`;
 
