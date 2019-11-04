@@ -12,7 +12,9 @@ router.get(
 	async (req, res, err) => {
 		try {
 			const endpoint = "https://api.yelp.com/v3/businesses/search?";
+
 			const yelpApiKey = process.env.YELP_API_KEY;
+			axios.defaults.headers.common["Authorization"] = `Bearer ${yelpApiKey}`;
 
 			// location
 			const reqLocation = req.query.location;
@@ -25,8 +27,6 @@ router.get(
 			const term = "term=" + strTerms;
 
 			const fullEndpoint = endpoint + location + "&" + term;
-
-			axios.defaults.headers.common["Authorization"] = `Bearer ${yelpApiKey}`;
 
 			const { data } = await axios.get(fullEndpoint);
 			// console.log("response", data.businesses[0]);

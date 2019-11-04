@@ -10,8 +10,8 @@ const FrontPage = (props) => {
 			{props.searchResults.length ? (
 				<SearchResults />
 			) : (
-				<div className="d-flex justify-content-center align-items-center">
-					<div>
+				<div className="">
+					<div className="d-flex justify-content-center align-items-center">
 						<SearchBar />
 					</div>
 				</div>
