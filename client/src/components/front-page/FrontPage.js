@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import SearchBar from "../search-bar/SearchBar";
 import SearchResults from "../search-results/SearchResults";
 import "./front-page.css";
+// import Logo from "../logo/Logo";
 
 const FrontPage = (props) => {
 	return (
