@@ -3,6 +3,14 @@ import SearchBar from "../search-bar/SearchBar";
 import { connect } from "react-redux";
 // import { NavLink } from "react-router-dom";
 
+/*
+When logged out, user should see links for Log In and Sign Up
+*/
+
+/*
+When logged in, user should see links for My Lists
+*/
+
 const Navbar = (props) => {
 	return (
 		<nav className="navbar navbar-expand navbar-light bg-light">
