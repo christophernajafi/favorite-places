@@ -6,7 +6,7 @@ const About = () => {
 		<Fragment>
 			<div className="jumbotron">
 				Hello! Welcome to my portfolio project. If you would like to see my
-				other projects, please visit{" "}
+				other projects and learn more about me, please visit{" "}
 				<a href="https://wwww.chrisnajafi.com/" target="_blank">
 					ChrisNajafi.com
 				</a>
