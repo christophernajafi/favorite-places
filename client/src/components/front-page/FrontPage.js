@@ -10,7 +10,7 @@ const FrontPage = (props) => {
 			{props.searchResults.length ? (
 				<SearchResults />
 			) : (
-				<div className="">
+				<div className="jumbotron">
 					<div className="d-flex justify-content-center align-items-center">
 						<SearchBar />
 					</div>
