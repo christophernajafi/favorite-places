@@ -1,6 +1,7 @@
 import React from "react";
 import SearchBar from "../search-bar/SearchBar";
 import { connect } from "react-redux";
+// import { NavLink } from "react-router-dom";
 
 const Navbar = (props) => {
 	return (
@@ -16,6 +17,15 @@ const Navbar = (props) => {
 						{props.searchResults.length ? <SearchBar /> : <div></div>}
 					</li>
 					<li className="nav-item">
+						{/* eslint-disable-next-line */}
+						<a className="nav-link" href="#">
+							About
+						</a>
+					</li>
+					<li className="nav-item">
+						{/* <NavLink to={"/log-in"} className="nav-link">
+							Log In
+						</NavLink> */}
 						{/* eslint-disable-next-line */}
 						<a className="nav-link" href="#">
 							Log In
