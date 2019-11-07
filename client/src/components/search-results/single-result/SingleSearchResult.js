@@ -11,11 +11,11 @@ const SingleSearchResult = (props) => {
 		<div>
 			<img src={image_url} alt="" />
 			<br />
-			Name: {name}
+			<span className="font-weight-bold">{name}</span>
 			<br />
-			Address: {display_address[0] + " " + display_address[1]}
+			{display_address[0] + " " + display_address[1]}
 			<br />
-			Phone: {display_phone}
+			{display_phone}
 			<br />
 		</div>
 	);
