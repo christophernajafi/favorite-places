@@ -16,6 +16,10 @@
 		"redux-thunk": "^2.3.0",
 		"uuid": "^3.3.3"
 	},
+	"devDependencies": {
+		"redux-devtools-extension": "^2.13.8",
+		"redux-logger": "^3.0.6"
+	},
 	"scripts": {
 		"start": "react-scripts start",
 		"build": "react-scripts build",
@@ -37,9 +41,5 @@
 			"last 1 safari version"
 		]
 	},
-	"proxy": "http://localhost:5000",
-	"devDependencies": {
-		"redux-devtools-extension": "^2.13.8",
-		"redux-logger": "^3.0.6"
-	}
+	"proxy": "http://localhost:5000"
 }
