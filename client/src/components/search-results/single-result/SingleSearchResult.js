@@ -3,19 +3,24 @@ import "./single-result.css";
 
 const SingleSearchResult = (props) => {
 	const {
-		name,
+		categories,
+		display_phone,
 		image_url,
 		location,
-		display_phone,
+		name,
 		rating,
-		review_count,
-		categories
+		review_count
+		// url
 	} = props.result;
 	const { display_address } = location;
 
-	// convert array of categories to a string
-	const m = categories.map((category) => category.title);
-	const c = m.join(", ");
+	// convert categories array to a string
+	const categoryTitlesArr = categories.map((category) => category.title);
+	const categoryTitles = categoryTitlesArr.join(", ");
+
+	const displayAddress = display_address.join(" ");
+
+	// console.log("url: ", url);
 
 	return (
 		<div>
@@ -25,9 +30,9 @@ const SingleSearchResult = (props) => {
 			<br />
 			{rating} ({review_count})
 			<br />
-			{c}
+			{categoryTitles}
 			<br />
-			{display_address[0] + " " + display_address[1]}
+			{displayAddress}
 			<br />
 			{display_phone}
 			<br />
