@@ -5,27 +5,11 @@ const ListSchema = mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		ref: "users"
 	},
-	name: {
+	title: {
 		type: String,
 		required: true
 	},
-	email: {
-		type: String,
-		required: true,
-		unique: true
-	},
-	phone: {
-		type: String,
-		required: true
-	},
-	type: {
-		type: String,
-		default: "personal"
-	},
-	date: {
-		type: Date,
-		default: Date.now
-	}
+	places: []
 });
 
 module.exports = mongoose.model("list", ListSchema);
