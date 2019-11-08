@@ -27,6 +27,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 ## Future Features
 
 - Autocomplete in search bar
+- Spell correction for misspelled search terms and location
 - Sign up with Facebook
 - Sign up with Google
 - Email verification at sign up

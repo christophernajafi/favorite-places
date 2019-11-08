@@ -12,7 +12,10 @@ const SingleSearchResult = (props) => {
 		categories
 	} = props.result;
 	const { display_address } = location;
-	const { title } = categories[0];
+
+	// convert array of categories to a string
+	const m = categories.map((category) => category.title);
+	const c = m.join(", ");
 
 	return (
 		<div>
@@ -22,7 +25,7 @@ const SingleSearchResult = (props) => {
 			<br />
 			{rating} ({review_count})
 			<br />
-			{title}
+			{c}
 			<br />
 			{display_address[0] + " " + display_address[1]}
 			<br />
