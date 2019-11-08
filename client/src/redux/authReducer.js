@@ -32,6 +32,7 @@ const SET_LAT_LONG = "SET_LAT_LONG";
 
 // Clear Errors
 
+// eslint-disable-next-line
 const setSearchResults = (searchResults) => ({
 	type: SET_SEARCH_RESULTS,
 	searchResults
