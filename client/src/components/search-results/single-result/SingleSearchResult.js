@@ -18,7 +18,7 @@ const SingleSearchResult = (props) => {
 	const categoryTitlesArr = categories.map((category) => category.title);
 	const categoryTitles = categoryTitlesArr.join(", ");
 
-	const displayAddress = display_address.join(" ");
+	const displayAddress = display_address.join(", ");
 
 	// console.log("url: ", url);
 
