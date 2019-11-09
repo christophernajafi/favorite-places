@@ -12,7 +12,7 @@ const LogIn = (props) => {
 
 	return (
 		<div className="form-container">
-			<h1>
+			{/* <h1>
 				Account <span className="text-primary">Login</span>
 			</h1>
 			<form onSubmit={onSubmit}>
@@ -41,7 +41,7 @@ const LogIn = (props) => {
 					value="Login"
 					className="btn btn-primary btn-block"
 				/>
-			</form>
+			</form> */}
 		</div>
 	);
 };

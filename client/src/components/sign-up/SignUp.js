@@ -12,7 +12,7 @@ const SignUp = (props) => {
 
 	return (
 		<div className="form-container">
-			<h1>
+			{/* <h1>
 				Account <span className="text-primary">Register</span>
 			</h1>
 			<form onSubmit={onSubmit}>
@@ -57,7 +57,7 @@ const SignUp = (props) => {
 					value="Register"
 					className="btn btn-primary btn-block"
 				/>
-			</form>
+			</form> */}
 		</div>
 	);
 };
