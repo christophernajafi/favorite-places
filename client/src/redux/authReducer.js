@@ -18,6 +18,20 @@ const CLEAR_ERRORS = "CLEAR_ERRORS";
  * ACTION CREATORS
  */
 
+// Logout
+const logout = () => {
+	dispatch({ type: LOGOUT });
+};
+
+// Clear Errors
+const clearErrors = () => {
+	dispatch({ type: CLEAR_ERRORS });
+};
+
+/**
+ * ACTION THUNKS
+ */
+
 // Load User
 const loadUser = async () => {
 	if (localStorage.token) {
@@ -66,35 +80,6 @@ const login = async (formData) => {
 			type: LOGIN_FAIL,
 			payload: err.response.data.msg
 		});
-	}
-};
-
-// Logout
-const logout = () => {
-	dispatch({ type: LOGOUT });
-};
-
-// Clear Errors
-const clearErrors = () => {
-	dispatch({ type: CLEAR_ERRORS });
-};
-
-/**
- * ACTION THUNKS
- */
-
-export const getSearchResults = (terms, location) => async (dispatch) => {
-	try {
-		const { data } = await axios.get("/api/yelp", {
-			params: {
-				terms,
-				location
-			}
-		});
-		console.log("getSearchResults ", data.businesses);
-		dispatch(setSearchResults(data.businesses));
-	} catch (err) {
-		console.log(err);
 	}
 };
 
