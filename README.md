@@ -7,6 +7,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - React
 - Redux
 - Bootstrap
+- React Bootstrap
 - Authentication with JWT
 - Node.js
 - Express
@@ -31,6 +32,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Sign up with Facebook
 - Sign up with Google
 - Email verification at sign up
+- Settings link for user to change password
 - Weather report for a location
 - Turn into a PWA
 - Dark mode
