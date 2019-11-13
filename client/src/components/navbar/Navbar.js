@@ -2,7 +2,7 @@ import React from "react";
 import SearchBar from "../search-bar/SearchBar";
 import { connect } from "react-redux";
 import "./navbar.css";
-import { Navbar, Nav, Form } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
 
 /*
 When logged out, user should see links for Log In and Sign Up
@@ -20,9 +20,7 @@ const NavbarComponent = props => {
           <Nav.Link href="#">Log In</Nav.Link>
           <Nav.Link href="#">Sign Up</Nav.Link>
         </Nav>
-        <Form inline>
-          {props.searchResults.length ? <SearchBar /> : <div></div>}
-        </Form>
+        {props.searchResults.length ? <SearchBar /> : <div></div>}
       </Navbar.Collapse>
     </Navbar>
   );
