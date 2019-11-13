@@ -32,7 +32,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Sign up with Facebook
 - Sign up with Google
 - Email verification at sign up
-- Settings link for user to change password
+- Settings link/route for user to change password
 - Weather report for a location
 - Turn into a PWA
 - Dark mode
