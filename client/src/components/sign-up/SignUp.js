@@ -1,21 +1,24 @@
 import React, { Component } from "react";
-import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./sign-up.css";
 
 class SignUp extends Component {
-  // const [user, setUser] = useState({
-  // 	name: "",
-  // 	email: "",
-  // 	password: "",
-  // 	password2: ""
-  // });
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "",
+      email: "",
+      password: "",
+      passwordConfirmed: ""
+    };
+  }
 
-  onChange = e => {
-    //
+  onChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
   };
 
-  onSubmit = e => {
-    e.preventDefault();
+  onSubmit = event => {
+    event.preventDefault();
     // if (name === "" || email === "" || password === "") {
     // 	setAlert("Please enter all fields", "danger");
     // } else if (password !== password2) {
@@ -33,43 +36,51 @@ class SignUp extends Component {
     return (
       <div className="Signup">
         <form onSubmit={this.onSubmit}>
-          <FormGroup controlId="email" bsSize="large">
-            <FormLabel>Name</FormLabel>
+          {/* Name */}
+          <FormGroup controlId="name" size="lg">
+            <FormControl
+              autoFocus
+              type="text"
+              // value={email}
+              onChange={this.onChange}
+              placeholder="Name"
+              required
+            />
+          </FormGroup>
+          {/* Email */}
+          <FormGroup controlId="email" size="lg">
             <FormControl
               autoFocus
               type="email"
               // value={email}
               onChange={this.onChange}
+              placeholder="Email"
+              required
             />
           </FormGroup>
-          <FormGroup controlId="email" bsSize="large">
-            <FormLabel>Email</FormLabel>
-            <FormControl
-              autoFocus
-              type="email"
-              // value={email}
-              onChange={this.onChange}
-            />
-          </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
-            <FormLabel>Password</FormLabel>
+          {/* Password */}
+          <FormGroup controlId="password" size="lg">
             <FormControl
               // value={password}
               onChange={this.onChange}
               type="password"
+              placeholder="Password"
+              required
             />
           </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
-            <FormLabel>Confirm Password</FormLabel>
+          {/* Confirm Password */}
+          <FormGroup controlId="confirmPassword" size="lg">
             <FormControl
               // value={password}
               onChange={this.onChange}
               type="password"
+              placeholder="Confirm Password"
+              required
             />
           </FormGroup>
           <Button
             block
-            bsSize="large"
+            size="lg"
             // disabled={!validateForm()}
             type="submit"
           >

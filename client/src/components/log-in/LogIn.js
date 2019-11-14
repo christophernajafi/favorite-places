@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./log-in.css";
 
 class LogIn extends Component {
@@ -32,26 +32,24 @@ class LogIn extends Component {
     return (
       <div className="Login">
         <form onSubmit={this.onSubmit}>
-          <FormGroup controlId="email" bsSize="large">
-            <FormLabel>Email</FormLabel>
+          <FormGroup controlId="email" size="lg">
             <FormControl
               autoFocus
               type="email"
-              // value={email}
+              placeholder="Email"
               onChange={this.onChange}
             />
           </FormGroup>
-          <FormGroup controlId="password" bsSize="large">
-            <FormLabel>Password</FormLabel>
+          <FormGroup controlId="password" size="lg">
             <FormControl
-              // value={password}
+              placeholder="Password"
               onChange={this.onChange}
               type="password"
             />
           </FormGroup>
           <Button
             block
-            bsSize="large"
+            size="lg"
             // disabled={!validateForm()}
             type="submit"
           >
