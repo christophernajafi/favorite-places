@@ -37,7 +37,12 @@ const SingleSearchResult = props => {
                   <br />
                   {display_phone}
                 </p>
-                <a href={url} className="btn btn-primary" target="_blank">
+                <a
+                  href={url}
+                  className="btn btn-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Reviews
                 </a>
               </div>

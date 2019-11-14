@@ -36,6 +36,29 @@ class SignUp extends Component {
     return (
       <div className="Signup">
         <form onSubmit={this.onSubmit}>
+          {/* Facebook and Google OAuth */}
+          {/* <Button
+            block
+            size="lg"
+            // disabled={!validateForm()}
+            type="submit"
+          >
+            Sign Up with Facebook
+          </Button>
+          <p />
+          <Button
+            block
+            size="lg"
+            // disabled={!validateForm()}
+            type="submit"
+          >
+            Sign Up with Google
+          </Button>
+          <p />
+          <div class="strike">
+            <span>OR</span>
+          </div>
+          <p /> */}
           <FormGroup controlId="name" size="lg">
             <FormControl
               autoFocus

@@ -38,6 +38,7 @@ class LogIn extends Component {
               type="email"
               placeholder="Email"
               onChange={this.onChange}
+              required
             />
           </FormGroup>
           <FormGroup controlId="password" size="lg">
@@ -45,6 +46,7 @@ class LogIn extends Component {
               placeholder="Password"
               onChange={this.onChange}
               type="password"
+              required
             />
           </FormGroup>
           <Button
