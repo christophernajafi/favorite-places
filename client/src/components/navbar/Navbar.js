@@ -17,8 +17,8 @@ const NavbarComponent = props => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="/about">About</Nav.Link>
-          <Nav.Link href="#">Log In</Nav.Link>
-          <Nav.Link href="#">Sign Up</Nav.Link>
+          <Nav.Link href="/log-in">Log In</Nav.Link>
+          <Nav.Link href="/sign-up">Sign Up</Nav.Link>
         </Nav>
         {props.searchResults.length ? <SearchBar /> : <div></div>}
       </Navbar.Collapse>
