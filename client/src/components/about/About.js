@@ -6,7 +6,8 @@ const About = () => {
   return (
     <Jumbotron>
       <Container>
-        <h1>Hello! Welcome to my portfolio project!</h1>
+        <h1>Hello!</h1>
+        <p>Welcome to my portfolio project!</p>
         <p>
           If you would like to see my other projects and learn more about me,
           please visit{" "}

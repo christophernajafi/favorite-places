@@ -30,7 +30,7 @@ const SingleSearchResult = props => {
             <div className="card-block">
               <div className="container">
                 <h4 className="card-title">{name}</h4>
-                <p className="card-text">
+                <div className="card-text">
                   {rating}{" "}
                   <Rater rating={rating} total={5} interactive={false} /> (
                   {review_count})
@@ -40,7 +40,7 @@ const SingleSearchResult = props => {
                   {displayAddress}
                   <br />
                   {display_phone}
-                </p>
+                </div>
                 <a
                   href={url}
                   className="btn btn-primary"
