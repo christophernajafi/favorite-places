@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
+import "./log-in.css";
 
 class LogIn extends Component {
   constructor(props) {
@@ -10,12 +12,12 @@ class LogIn extends Component {
     };
   }
 
-  onChange = e => {
+  onChange = event => {
     // setUser({ ...user, [e.target.name]: e.target.value });
   };
 
-  onSubmit = e => {
-    e.preventDefault();
+  onSubmit = event => {
+    event.preventDefault();
     // if (email === "" || password === "") {
     //   setAlert("Please fill in all fields", "danger");
     // } else {
@@ -28,36 +30,33 @@ class LogIn extends Component {
 
   render() {
     return (
-      <div className="form-container">
-        <h1>
-          Account <span className="text-primary">Login</span>
-        </h1>
+      <div className="Login">
         <form onSubmit={this.onSubmit}>
-          <div className="form-group">
-            <label htmlFor="email">Email Address</label>
-            <input
+          <FormGroup controlId="email" bsSize="large">
+            <FormLabel>Email</FormLabel>
+            <FormControl
+              autoFocus
               type="email"
-              name="email"
               // value={email}
               onChange={this.onChange}
-              required
             />
-          </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              name="password"
+          </FormGroup>
+          <FormGroup controlId="password" bsSize="large">
+            <FormLabel>Password</FormLabel>
+            <FormControl
               // value={password}
               onChange={this.onChange}
-              required
+              type="password"
             />
-          </div>
-          <input
+          </FormGroup>
+          <Button
+            block
+            bsSize="large"
+            // disabled={!validateForm()}
             type="submit"
-            value="Login"
-            className="btn btn-primary btn-block"
-          />
+          >
+            Log In
+          </Button>
         </form>
       </div>
     );
@@ -65,3 +64,36 @@ class LogIn extends Component {
 }
 
 export default connect(null)(LogIn);
+
+// <div className="form-container">
+//   <h1>
+//     Account <span className="text-primary">Login</span>
+//   </h1>
+//   <form onSubmit={this.onSubmit}>
+//     <div className="form-group">
+//       <label htmlFor="email">Email Address</label>
+//       <input
+//         type="email"
+//         name="email"
+//         // value={email}
+//         onChange={this.onChange}
+//         required
+//       />
+//     </div>
+//     <div className="form-group">
+//       <label htmlFor="password">Password</label>
+//       <input
+//         type="password"
+//         name="password"
+//         // value={password}
+//         onChange={this.onChange}
+//         required
+//       />
+//     </div>
+//     <input
+//       type="submit"
+//       value="Login"
+//       className="btn btn-primary btn-block"
+//     />
+//   </form>
+// </div>
