@@ -20,17 +20,15 @@ const SingleSearchResult = props => {
 
   const displayAddress = display_address.join(", ");
 
-  console.log("url: ", url);
-
   return (
-    <div class="container">
-      <div class="card resultCard">
-        <div class="row">
-          <div class="col-md-6">
-            <div class="card-block">
+    <div className="container">
+      <div className="card resultCard">
+        <div className="row">
+          <div className="col-md-6">
+            <div className="card-block">
               <div className="container">
-                <h4 class="card-title">{name}</h4>
-                <p class="card-text">
+                <h4 className="card-title">{name}</h4>
+                <p className="card-text">
                   {rating} ({review_count})
                   <br />
                   {categoryTitles}
@@ -39,14 +37,14 @@ const SingleSearchResult = props => {
                   <br />
                   {display_phone}
                 </p>
-                <a href="{url}" class="btn btn-primary" target="_blank">
+                <a href={url} className="btn btn-primary" target="_blank">
                   Reviews
                 </a>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <img class="card-img-bottom" src={image_url} alt="" />
+          <div className="col-md-6">
+            <img className="card-img-bottom" src={image_url} alt="" />
           </div>
         </div>
       </div>
