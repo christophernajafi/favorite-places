@@ -1,4 +1,6 @@
 import React from "react";
+import Rater from "react-rater";
+import "react-rater/lib/react-rater.css";
 import "./single-result.css";
 
 const SingleSearchResult = props => {
@@ -29,7 +31,9 @@ const SingleSearchResult = props => {
               <div className="container">
                 <h4 className="card-title">{name}</h4>
                 <p className="card-text">
-                  {rating} ({review_count})
+                  {rating}{" "}
+                  <Rater rating={rating} total={5} interactive={false} /> (
+                  {review_count})
                   <br />
                   {categoryTitles}
                   <br />
