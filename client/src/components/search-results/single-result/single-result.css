@@ -1,3 +1,11 @@
 img {
-	width: 10rem;
+  display: block;
+  max-width: 230px;
+  max-height: 250px;
+  width: auto;
+  height: auto;
+}
+
+.resultCard {
+  border: transparent;
 }

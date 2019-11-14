@@ -36,7 +36,6 @@ class SignUp extends Component {
     return (
       <div className="Signup">
         <form onSubmit={this.onSubmit}>
-          {/* Name */}
           <FormGroup controlId="name" size="lg">
             <FormControl
               autoFocus
@@ -47,7 +46,6 @@ class SignUp extends Component {
               required
             />
           </FormGroup>
-          {/* Email */}
           <FormGroup controlId="email" size="lg">
             <FormControl
               autoFocus
@@ -58,7 +56,6 @@ class SignUp extends Component {
               required
             />
           </FormGroup>
-          {/* Password */}
           <FormGroup controlId="password" size="lg">
             <FormControl
               // value={password}
@@ -68,7 +65,6 @@ class SignUp extends Component {
               required
             />
           </FormGroup>
-          {/* Confirm Password */}
           <FormGroup controlId="confirmPassword" size="lg">
             <FormControl
               // value={password}
