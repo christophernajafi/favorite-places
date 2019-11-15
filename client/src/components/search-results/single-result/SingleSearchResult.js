@@ -49,6 +49,7 @@ const SingleSearchResult = props => {
                 >
                   Reviews
                 </a>
+                <button className="btn btn-warning">Save</button>
               </div>
             </div>
           </div>

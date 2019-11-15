@@ -3,9 +3,11 @@ import thunkMiddleware from "redux-thunk";
 import { createLogger } from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
 import searchResultsReducer from "./searchResultsReducer";
+import authReducer from "./authReducer";
 
 const reducer = combineReducers({
-	search: searchResultsReducer
+  search: searchResultsReducer,
+  auth: authReducer
 });
 
 // all middleware
@@ -18,17 +20,17 @@ const productionMiddleware = [thunkMiddleware];
 const developmentMiddleware = [];
 
 if (process.env.NODE_ENV !== "production") {
-	// development
-	middleware = composeWithDevTools(
-		applyMiddleware(
-			...productionMiddleware,
-			...developmentMiddleware,
-			createLogger({ collapsed: true })
-		)
-	);
+  // development
+  middleware = composeWithDevTools(
+    applyMiddleware(
+      ...productionMiddleware,
+      ...developmentMiddleware,
+      createLogger({ collapsed: true })
+    )
+  );
 } else {
-	// production
-	middleware = applyMiddleware(...productionMiddleware);
+  // production
+  middleware = applyMiddleware(...productionMiddleware);
 }
 
 const store = createStore(reducer, middleware);
