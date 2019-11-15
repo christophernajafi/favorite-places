@@ -7,28 +7,32 @@ class LogIn extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      email: "",
       password: ""
     };
   }
 
   onChange = event => {
-    // setUser({ ...user, [e.target.name]: e.target.value });
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   onSubmit = event => {
     event.preventDefault();
-    // if (email === "" || password === "") {
-    //   setAlert("Please fill in all fields", "danger");
-    // } else {
-    //   login({
-    //     email,
-    //     password
-    //   });
-    // }
+    const { email, password } = this.state;
+    if (email === "" || password === "") {
+      // setAlert("Please fill in all fields", "danger");
+      console.log("Please fill in all fields");
+    } else {
+      // login({
+      //   email,
+      //   password
+      // });
+      console.log(email + ", " + password);
+    }
   };
 
   render() {
+    const { email, password } = this.state;
     return (
       <div className="Login">
         <form onSubmit={this.onSubmit}>
@@ -39,6 +43,8 @@ class LogIn extends Component {
               placeholder="Email"
               onChange={this.onChange}
               required
+              name="email"
+              defaultValue={email}
             />
           </FormGroup>
           <FormGroup controlId="password" size="lg">
@@ -47,6 +53,8 @@ class LogIn extends Component {
               onChange={this.onChange}
               type="password"
               required
+              name="password"
+              defaultValue={password}
             />
           </FormGroup>
           <Button

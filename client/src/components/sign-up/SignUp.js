@@ -9,7 +9,7 @@ class SignUp extends Component {
       name: "",
       email: "",
       password: "",
-      passwordConfirmed: ""
+      confirmPassword: ""
     };
   }
 
@@ -19,20 +19,30 @@ class SignUp extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    // if (name === "" || email === "" || password === "") {
-    // 	setAlert("Please enter all fields", "danger");
-    // } else if (password !== password2) {
-    // 	setAlert("Passwords do not match", "danger");
-    // } else {
-    // 	register({
-    // 		name,
-    // 		email,
-    // 		password
-    // 	});
-    // }
+    const { name, email, password, confirmPassword } = this.state;
+    if (
+      name === "" ||
+      email === "" ||
+      password === "" ||
+      confirmPassword === ""
+    ) {
+      // setAlert("Please enter all fields", "danger");
+      console.log("Please enter all fields.");
+    } else if (password !== confirmPassword) {
+      // setAlert("Passwords do not match", "danger");
+      console.log("Password do not match.");
+    } else {
+      console.log(name, email, password, confirmPassword);
+      // register({
+      // 	name,
+      // 	email,
+      // 	password
+      // });
+    }
   };
 
   render() {
+    const { name, email, password, confirmPassword } = this.state;
     return (
       <div className="Signup">
         <form onSubmit={this.onSubmit}>
@@ -67,6 +77,8 @@ class SignUp extends Component {
               onChange={this.onChange}
               placeholder="Name"
               required
+              name="name"
+              defaultValue={name}
             />
           </FormGroup>
           <FormGroup controlId="email" size="lg">
@@ -77,6 +89,8 @@ class SignUp extends Component {
               onChange={this.onChange}
               placeholder="Email"
               required
+              name="email"
+              defaultValue={email}
             />
           </FormGroup>
           <FormGroup controlId="password" size="lg">
@@ -86,6 +100,8 @@ class SignUp extends Component {
               type="password"
               placeholder="Password"
               required
+              name="password"
+              defaultValue={password}
             />
           </FormGroup>
           <FormGroup controlId="confirmPassword" size="lg">
@@ -95,6 +111,8 @@ class SignUp extends Component {
               type="password"
               placeholder="Confirm Password"
               required
+              name="confirmPassword"
+              defaultValue={confirmPassword}
             />
           </FormGroup>
           <Button
