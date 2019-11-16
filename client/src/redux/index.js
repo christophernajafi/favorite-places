@@ -2,12 +2,14 @@ import { combineReducers, createStore, applyMiddleware } from "redux";
 import thunkMiddleware from "redux-thunk";
 import { createLogger } from "redux-logger";
 import { composeWithDevTools } from "redux-devtools-extension";
-import searchResultsReducer from "./searchResultsReducer";
-import authReducer from "./authReducer";
+import searchResultsReducer from "./reducers/searchResultsReducer";
+import authReducer from "./reducers/authReducer";
+import alertReducer from "./reducers/alertReducer";
 
 const reducer = combineReducers({
   search: searchResultsReducer,
-  auth: authReducer
+  auth: authReducer,
+  alert: alertReducer
 });
 
 // all middleware
