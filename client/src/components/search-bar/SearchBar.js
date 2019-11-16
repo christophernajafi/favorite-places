@@ -14,15 +14,13 @@ class SearchBar extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    if (!this.state.searchTerms.length) {
+    const { searchTerms, searchLocation } = this.state;
+    const { getSearchResults } = this.props;
+    if (!searchTerms.length) {
+      // need an alert here
       console.log("Please enter something");
     } else {
-      this.props.getSearchResults(
-        this.state.searchTerms,
-        this.state.searchLocation
-      );
-      // console.log("terms: ", this.state.searchTerms);
-      // console.log("location: ", this.state.searchLocation);
+      getSearchResults(searchTerms, searchLocation);
     }
   };
 
@@ -39,8 +37,8 @@ class SearchBar extends Component {
             placeholder="Find ..."
             aria-label=""
             onChange={this.onChange}
-            defaultValue={searchTerms}
             name="searchTerms"
+            defaultValue={searchTerms}
           />
           <input
             className="form-control mr-sm-2"
@@ -48,8 +46,8 @@ class SearchBar extends Component {
             placeholder="Near ..."
             aria-label=""
             onChange={this.onChange}
-            defaultValue={searchLocation}
             name="searchLocation"
+            defaultValue={searchLocation}
           />
           <button
             className="btn btn-outline-success my-2 my-sm-0"
@@ -63,12 +61,6 @@ class SearchBar extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    searchResults: state.searchResults
-  };
-};
-
 const mapDispatchToProps = dispatch => {
   return {
     getSearchResults: (terms, location) =>
@@ -76,4 +68,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(SearchBar);
+export default connect(null, mapDispatchToProps)(SearchBar);

@@ -19,11 +19,13 @@ const CLEAR_ERRORS = "CLEAR_ERRORS";
  */
 
 // Logout
+// eslint-disable-next-line
 const logout = () => ({
   type: LOGOUT
 });
 
 // Clear Errors
+// eslint-disable-next-line
 const clearErrors = () => ({
   type: CLEAR_ERRORS
 });
@@ -39,8 +41,10 @@ const loadUser = async () => {
   }
   try {
     const { data } = await axios.get("/api/auth");
+    console.log(data);
     // dispatch({ type: USER_LOADED, payload: data });
   } catch (err) {
+    console.log(err);
     // dispatch({ type: AUTH_ERROR });
   }
 };
@@ -54,6 +58,7 @@ export const register = async formData => {
   };
   try {
     const { data } = await axios.post("/api/users", formData, config);
+    console.log(data);
     // dispatch({ type: REGISTER_SUCCESS, payload: data });
     loadUser();
   } catch (err) {
@@ -74,6 +79,7 @@ export const login = async formData => {
   };
   try {
     const { data } = await axios.post("/api/auth", formData, config);
+    console.log(data);
     // dispatch({ type: LOGIN_SUCCESS, payload: data });
     loadUser();
   } catch (err) {
@@ -102,6 +108,7 @@ const initialState = {
  */
 
 const authReducer = (state = initialState, action) => {
+  // eslint-disable-next-line
   const newState = { ...state };
   switch (action.type) {
     case USER_LOADED:
