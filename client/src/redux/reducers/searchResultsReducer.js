@@ -13,44 +13,47 @@ const SET_LAT_LONG = "SET_LAT_LONG";
  * ACTION CREATORS
  */
 
-const setSearchResults = (searchResults) => ({
-	type: SET_SEARCH_RESULTS,
-	searchResults
+const setSearchResults = searchResults => ({
+  type: SET_SEARCH_RESULTS,
+  searchResults
 });
 
 // eslint-disable-next-line
-const setSearchLocation = (location) => ({
-	type: SET_SEARCH_LOCATION,
-	location
+const setSearchLocation = searchLocation => ({
+  type: SET_SEARCH_LOCATION,
+  searchLocation
 });
 
 // eslint-disable-next-line
-const setSearchTerms = (terms) => ({
-	type: SET_SEARCH_TERMS
+const setSearchTerms = searchTerms => ({
+  type: SET_SEARCH_TERMS,
+  searchTerms
 });
 
 // eslint-disable-next-line
-const setLatLong = () => ({
-	type: SET_LAT_LONG
+const setLatLong = (latitude, longitude) => ({
+  type: SET_LAT_LONG,
+  latitude,
+  longitude
 });
 
 /**
  * ACTION THUNKS
  */
 
-export const getSearchResults = (terms, location) => async (dispatch) => {
-	try {
-		const { data } = await axios.get("/api/yelp", {
-			params: {
-				terms,
-				location
-			}
-		});
-		console.log("getSearchResults ", data.businesses);
-		dispatch(setSearchResults(data.businesses));
-	} catch (err) {
-		console.log(err);
-	}
+export const getSearchResults = (terms, location) => async dispatch => {
+  try {
+    const { data } = await axios.get("/api/yelp", {
+      params: {
+        terms,
+        location
+      }
+    });
+    // console.log("getSearchResults ", data.businesses);
+    dispatch(setSearchResults(data.businesses));
+  } catch (err) {
+    console.log(err);
+  }
 };
 
 /**
@@ -58,11 +61,11 @@ export const getSearchResults = (terms, location) => async (dispatch) => {
  */
 
 const initialState = {
-	latitude: "",
-	longitude: "",
-	searchLocation: "",
-	searchResults: [],
-	searchTerms: ""
+  latitude: "",
+  longitude: "",
+  searchLocation: "",
+  searchResults: [],
+  searchTerms: ""
 };
 
 /**
@@ -70,14 +73,14 @@ const initialState = {
  */
 
 const searchResultsReducer = (state = initialState, action) => {
-	const newState = { ...state };
-	switch (action.type) {
-		case SET_SEARCH_RESULTS:
-			newState.searchResults = [...action.searchResults];
-			return newState;
-		default:
-			return state;
-	}
+  const newState = { ...state };
+  switch (action.type) {
+    case SET_SEARCH_RESULTS:
+      newState.searchResults = [...action.searchResults];
+      return newState;
+    default:
+      return state;
+  }
 };
 
 export default searchResultsReducer;

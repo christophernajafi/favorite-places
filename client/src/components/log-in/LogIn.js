@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./log-in.css";
+import { login } from "../../redux/reducers/authReducer";
 
 class LogIn extends Component {
   constructor(props) {
@@ -23,10 +24,10 @@ class LogIn extends Component {
       // setAlert("Please fill in all fields", "danger");
       console.log("Please fill in all fields");
     } else {
-      // login({
-      //   email,
-      //   password
-      // });
+      login({
+        email,
+        password
+      });
       console.log(email + ", " + password);
     }
   };
