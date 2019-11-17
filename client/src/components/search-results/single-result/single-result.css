@@ -1,3 +1,11 @@
+:root {
+  --primary-color: #003699;
+  --dark-color: #333333;
+  --light-color: #f4f4f4;
+  --danger-color: #dc3545;
+  --success-color: #28a745;
+}
+
 img {
   display: block;
   max-width: 230px;
@@ -8,4 +16,12 @@ img {
 
 .resultCard {
   border: transparent;
+}
+
+.btn {
+  margin: 3px;
+}
+
+.btn:hover {
+  color: var(--light-color);
 }
