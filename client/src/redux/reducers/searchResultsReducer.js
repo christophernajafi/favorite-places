@@ -52,6 +52,7 @@ export const getSearchResults = (terms, location) => async dispatch => {
     // console.log("getSearchResults ", data.businesses);
     dispatch(setSearchResults(data.businesses));
   } catch (err) {
+    // alert here
     console.log(err);
   }
 };

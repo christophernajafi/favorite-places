@@ -1,9 +1,8 @@
 import React from "react";
+import { connect } from "react-redux";
 
-// const alerts = [{ id: "1", type: "danger", msg: "Hi there!" }];
-const alerts = [];
-
-const Alerts = () => {
+const Alerts = props => {
+  const { alerts } = props;
   return (
     alerts.length > 0 &&
     alerts.map(alert => (
@@ -14,4 +13,10 @@ const Alerts = () => {
   );
 };
 
-export default Alerts;
+const mapStateToProps = state => {
+  return {
+    alerts: state.alert.alerts
+  };
+};
+
+export default connect(mapStateToProps)(Alerts);

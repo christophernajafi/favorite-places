@@ -7,15 +7,30 @@ import uuid from "uuid";
 const SET_ALERT = "SET_ALERT";
 const REMOVE_ALERT = "REMOVE_ALERT";
 
-// Set Alert
-export const setAlert = (msg, type, timeout = 5000) => {
+/**
+ * ACTION CREATORS
+ */
+
+// const setAlert = (message, type) => ({
+//   type: SET_ALERT,
+//   message,
+//   type
+// });
+
+// const removeAlert = id => ({
+//   type: REMOVE_ALERT,
+//   id
+// });
+
+// Set and Remove Alert
+export const setAlert = (message, type, timeout = 5000) => dispatch => {
   const id = uuid.v4();
-  console.log("id: ", id);
-  // dispatch({
-  //   type: SET_ALERT,
-  //   payload: { msg, type, id }
-  // });
-  // setTimeout(() => dispatch({ type: REMOVE_ALERT, payload: id }), timeout);
+  // dispatch(setAlert(message, type));
+  dispatch({
+    type: SET_ALERT,
+    payload: { message, type, id }
+  });
+  setTimeout(() => dispatch({ type: REMOVE_ALERT, payload: id }), timeout);
 };
 
 /**
@@ -23,7 +38,7 @@ export const setAlert = (msg, type, timeout = 5000) => {
  */
 
 const initialState = {
-  alert: []
+  alerts: []
 };
 
 /**
