@@ -111,7 +111,7 @@ const initialState = {
 
 const authReducer = (state = initialState, action) => {
   // eslint-disable-next-line
-  const newState = { ...state };
+  // const newState = { ...state };
   switch (action.type) {
     case USER_LOADED:
       return {
