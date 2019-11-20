@@ -11,10 +11,11 @@ const REMOVE_ALERT = "REMOVE_ALERT";
  * ACTION CREATORS
  */
 
-// const setAlert = (message, type) => ({
+// const setAlert = (message, alertType, id) => ({
 //   type: SET_ALERT,
 //   message,
-//   type
+//   alertType,
+//   id
 // });
 
 // const removeAlert = id => ({
@@ -22,14 +23,19 @@ const REMOVE_ALERT = "REMOVE_ALERT";
 //   id
 // });
 
+/**
+ * ACTION THUNKS
+ */
+
 // Set and Remove Alert
-export const setAlert = (message, type, timeout = 5000) => dispatch => {
+export const alert = (message, alertType, timeout = 5000) => dispatch => {
   const id = uuid.v4();
-  // dispatch(setAlert(message, type));
+  // dispatch(setAlert(message, alertType, id));
   dispatch({
     type: SET_ALERT,
-    payload: { message, type, id }
+    payload: { message, alertType, id }
   });
+  // dispatch(removeAlert(id));
   setTimeout(() => dispatch({ type: REMOVE_ALERT, payload: id }), timeout);
 };
 
