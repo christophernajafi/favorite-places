@@ -18,8 +18,6 @@ const CLEAR_ERRORS = "CLEAR_ERRORS";
  * ACTION CREATORS
  */
 
-//  login success
-
 // Logout
 // eslint-disable-next-line
 const logout = () => ({
@@ -81,7 +79,7 @@ export const login = async formData => {
   };
   try {
     const { data } = await axios.post("/api/auth", formData, config);
-    console.log(data);
+    console.log("data: ", data);
     // dispatch({ type: LOGIN_SUCCESS, payload: data });
     loadUser();
   } catch (err) {
