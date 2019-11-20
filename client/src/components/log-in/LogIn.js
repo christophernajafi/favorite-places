@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import { connect } from "react-redux";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./log-in.css";
 import { login } from "../../redux/reducers/authReducer";
+import { alert } from "../../redux/reducers/alertReducer";
 
 class LogIn extends Component {
   constructor(props) {
@@ -21,7 +21,7 @@ class LogIn extends Component {
     event.preventDefault();
     const { email, password } = this.state;
     if (email === "" || password === "") {
-      // setAlert("Please fill in all fields", "danger");
+      alert("Please fill in all fields", "danger");
       console.log("Please fill in all fields");
     } else {
       login({
@@ -58,12 +58,7 @@ class LogIn extends Component {
               defaultValue={password}
             />
           </FormGroup>
-          <Button
-            block
-            size="lg"
-            // disabled={!validateForm()}
-            type="submit"
-          >
+          <Button block size="lg" disabled={!(email && password)} type="submit">
             Log In
           </Button>
         </form>
@@ -72,7 +67,7 @@ class LogIn extends Component {
   }
 }
 
-export default connect(null)(LogIn);
+export default LogIn;
 
 // <div className="form-container">
 //   <h1>

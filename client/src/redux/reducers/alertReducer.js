@@ -31,6 +31,7 @@ const REMOVE_ALERT = "REMOVE_ALERT";
 export const alert = (message, alertType, timeout = 5000) => dispatch => {
   const id = uuid.v4();
   // dispatch(setAlert(message, alertType, id));
+  console.log("alert reducer");
   dispatch({
     type: SET_ALERT,
     payload: { message, alertType, id }

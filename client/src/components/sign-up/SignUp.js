@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./sign-up.css";
+import { register } from "../../redux/reducers/authReducer";
+import { alert } from "../../redux/reducers/alertReducer";
 
 class SignUp extends Component {
   constructor(props) {
@@ -26,18 +28,18 @@ class SignUp extends Component {
       password === "" ||
       confirmPassword === ""
     ) {
-      // setAlert("Please enter all fields", "danger");
+      alert("Please enter all fields", "danger");
       console.log("Please enter all fields.");
     } else if (password !== confirmPassword) {
-      // setAlert("Passwords do not match", "danger");
+      alert("Passwords do not match", "danger");
       console.log("Password do not match.");
     } else {
       console.log(name, email, password, confirmPassword);
-      // register({
-      // 	name,
-      // 	email,
-      // 	password
-      // });
+      register({
+        name,
+        email,
+        password
+      });
     }
   };
 
@@ -118,7 +120,7 @@ class SignUp extends Component {
           <Button
             block
             size="lg"
-            // disabled={!validateForm()}
+            disabled={!(name && email && password && confirmPassword)}
             type="submit"
           >
             Sign Up
