@@ -27,6 +27,8 @@ A Single-Page Application that enables a user to search for venues, add them to 
 
 ## Future Features
 
+- Protected routes
+- Filter lists by name
 - Autocomplete in search bar
 - Spell correction for misspelled search terms and location
 - Sign up with Facebook
@@ -37,3 +39,4 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Weather report for a location
 - Turn into a PWA
 - Dark mode
+- Software design document

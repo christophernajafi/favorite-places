@@ -6,7 +6,7 @@ import { Navbar, Nav } from "react-bootstrap";
 
 /*
 When logged out, user should see links for Log In and Sign Up
-When logged in, user should see links for My Lists, Logout, and Settings
+When logged in, user should see links for My Lists and Dropdown Menu (Settings, Log Out)
 */
 
 const NavbarComponent = props => {
