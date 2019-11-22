@@ -9,6 +9,11 @@ import Lists from "../lists/Lists";
 import Settings from "../settings/Settings";
 import NotFoundPage from "../not-found-page/NotFoundPage";
 
+/*
+Logged-In Only: lists, settings
+Logged-Out Only: log-in, sign-up
+*/
+
 const Routes = () => {
   return (
     <Switch>
