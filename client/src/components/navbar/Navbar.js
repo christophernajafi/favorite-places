@@ -18,8 +18,12 @@ const NavbarComponent = props => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="/about">About</Nav.Link>
+
+          {/* not authenticated */}
           <Nav.Link href="/log-in">Log In</Nav.Link>
           <Nav.Link href="/sign-up">Sign Up</Nav.Link>
+
+          {/* authenticated */}
           {/* <Nav.Link href="/lists">My Lists</Nav.Link>
           <NavDropdown
             title={<i class="far fa-user-circle"> Chris</i>}
@@ -30,7 +34,7 @@ const NavbarComponent = props => {
             <NavDropdown.Item href="#action/3.4">Log Out</NavDropdown.Item>
           </NavDropdown> */}
         </Nav>
-        {props.searchResults.length ? <SearchBar /> : <div></div>}
+        {props.searchResults.length > 0 && <SearchBar />}
       </Navbar.Collapse>
     </Navbar>
   );
