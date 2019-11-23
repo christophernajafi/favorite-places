@@ -3,10 +3,7 @@ import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./log-in.css";
 import { login } from "../../redux/reducers/authReducer";
 import { alert } from "../../redux/reducers/alertReducer";
-
-/*
-After logging in, should redirect to home
-*/
+import { Link, Redirect } from "react-router-dom";
 
 class LogIn extends Component {
   constructor(props) {
@@ -35,6 +32,10 @@ class LogIn extends Component {
       console.log(email + ", " + password);
     }
   };
+
+  if(isAuthenticated) {
+    return <Redirect to="/" />;
+  }
 
   render() {
     const { email, password } = this.state;
@@ -65,6 +66,9 @@ class LogIn extends Component {
           <Button block size="lg" disabled={!(email && password)} type="submit">
             Log In
           </Button>
+          <p className="my-1 text-center">
+            Don't have an account? <Link to="/sign-up">Sign Up</Link>
+          </p>
         </form>
       </div>
     );
