@@ -24,6 +24,7 @@ const NavbarComponent = props => {
           <Nav.Link href="/sign-up">Sign Up</Nav.Link>
 
           {/* authenticated */}
+          {/* dropdown should display user's first name */}
           {/* <Nav.Link href="/lists">My Lists</Nav.Link>
           <NavDropdown
             title={<i class="far fa-user-circle"> Chris</i>}
