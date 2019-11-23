@@ -2,7 +2,8 @@ import React from "react";
 import SearchBar from "../search-bar/SearchBar";
 import { connect } from "react-redux";
 import "./navbar.css";
-import { Navbar, Nav } from "react-bootstrap";
+// eslint-disable-next-line
+import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 /*
 When logged out, user should see links for Log In and Sign Up
@@ -19,6 +20,15 @@ const NavbarComponent = props => {
           <Nav.Link href="/about">About</Nav.Link>
           <Nav.Link href="/log-in">Log In</Nav.Link>
           <Nav.Link href="/sign-up">Sign Up</Nav.Link>
+          {/* <Nav.Link href="/lists">My Lists</Nav.Link>
+          <NavDropdown
+            title={<i class="far fa-user-circle"> Chris</i>}
+            id="basic-nav-dropdown"
+          >
+            <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">Log Out</NavDropdown.Item>
+          </NavDropdown> */}
         </Nav>
         {props.searchResults.length ? <SearchBar /> : <div></div>}
       </Navbar.Collapse>
