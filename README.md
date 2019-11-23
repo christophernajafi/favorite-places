@@ -8,7 +8,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Redux
 - Bootstrap
 - React Bootstrap
-- Authentication with JWT
+- Authentication using JWT and local storage
 - Node.js
 - Express
 - MongoDB
@@ -24,6 +24,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Add places to a list
 - Delete places from list
 - View places from a list on a map
+- Alert component for invalid input
 
 ## Future Features
 
@@ -34,7 +35,9 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Sign up with Facebook
 - Sign up with Google
 - Email verification at sign up
-- Settings link/route for user to change password
+- String password enforcement
+- Settings page for user to change name, email, or password
+- Ability to upload a profile pic
 - Tests using Jest and Enzyme
 - Weather report for a location
 - Turn into a PWA
