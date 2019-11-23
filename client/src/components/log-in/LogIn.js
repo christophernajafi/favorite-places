@@ -75,6 +75,16 @@ class LogIn extends Component {
   }
 }
 
+// remember to import propTypes
+// LogIn.propTypes = {
+//   login: PropTypes.func.isRequired,
+//   isAuthenticated: PropTypes.bool
+// };
+
+// const mapStateToProps = state => ({
+//   isAuthenticated: state.auth.isAuthenticated
+// });
+
 export default LogIn;
 
 // <div className="form-container">

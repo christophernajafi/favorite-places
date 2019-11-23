@@ -141,6 +141,17 @@ class SignUp extends Component {
   }
 }
 
+// remember to import propTypes
+// SignUp.propTypes = {
+//   setAlert: PropTypes.func.isRequired,
+//   register: PropTypes.func.isRequired,
+//   isAuthenticated: PropTypes.bool
+// };
+
+// const mapStateToProps = state => ({
+//   isAuthenticated: state.auth.isAuthenticated
+// });
+
 export default SignUp;
 
 // <div className="form-container">

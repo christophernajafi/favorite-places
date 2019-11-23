@@ -6,8 +6,8 @@ import "./navbar.css";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 
 /*
-When logged out, user should see links for Log In and Sign Up
-When logged in, user should see links for My Lists and Dropdown Menu (Settings, Log Out)
+When not authenticated, user should see links for Log In and Sign Up
+When authenticated, user should see links for My Lists and Dropdown Menu (Settings, Log Out)
 */
 
 const NavbarComponent = props => {
@@ -36,9 +36,16 @@ const NavbarComponent = props => {
   );
 };
 
+// remember to import propTypes
+// NavbarComponent.propTypes = {
+//   login: PropTypes.func.isRequired,
+//   isAuthenticated: PropTypes.bool
+// };
+
 const mapStateToProps = state => {
   return {
     searchResults: state.search.searchResults
+    //   isAuthenticated: state.auth.isAuthenticated
   };
 };
 
