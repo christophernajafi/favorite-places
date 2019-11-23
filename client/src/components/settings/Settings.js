@@ -1,5 +1,9 @@
 import React, { Fragment } from "react";
 
+/*
+Not authenticated should be redirected to log in page
+*/
+
 const Settings = () => {
   return (
     <Fragment>
