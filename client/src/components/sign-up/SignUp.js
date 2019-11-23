@@ -4,6 +4,10 @@ import "./sign-up.css";
 import { register } from "../../redux/reducers/authReducer";
 import { alert } from "../../redux/reducers/alertReducer";
 
+/*
+After signing up, should redirect to home
+*/
+
 class SignUp extends Component {
   constructor(props) {
     super(props);

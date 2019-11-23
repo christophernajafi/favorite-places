@@ -4,6 +4,10 @@ import "./log-in.css";
 import { login } from "../../redux/reducers/authReducer";
 import { alert } from "../../redux/reducers/alertReducer";
 
+/*
+After logging in, should redirect to home
+*/
+
 class LogIn extends Component {
   constructor(props) {
     super(props);
