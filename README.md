@@ -25,19 +25,20 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Delete places from list
 - View places from a list on a map
 - Alert component for invalid input
+- Protected routes
 
 ## Future Features
 
-- Protected routes
 - Filter lists by name
 - Autocomplete in search bar
 - Spell correction for misspelled search terms and location
 - Sign up with Facebook
 - Sign up with Google
 - Email verification at sign up
-- String password enforcement
+- Strong password enforcement
 - Settings page for user to change name, email, or password
 - Ability to upload a profile pic
+- CI/CD using CircleCI
 - Tests using Jest and Enzyme
 - Weather report for a location
 - Turn into a PWA
