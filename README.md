@@ -38,9 +38,9 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Strong password enforcement
 - Settings page for user to change name, email, or password
 - Ability to upload a profile pic
-- CI/CD using CircleCI
 - Tests using Jest, Enzyme, and Puppeteer
-- Weather report for a location
+- CI/CD using CircleCI
+- Weather report for a location using AccuWeather API
 - Turn into a PWA
 - Dark mode
 - Software design document
