@@ -37,6 +37,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Email verification at sign up
 - Strong password enforcement
 - Settings page for user to change name, email, or password
+- styled-components
 - Ability to upload a profile pic
 - Tests using Jest, Enzyme, and Puppeteer
 - CI/CD using CircleCI
