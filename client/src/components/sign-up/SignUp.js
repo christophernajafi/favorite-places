@@ -4,6 +4,8 @@ import "./sign-up.css";
 import { register } from "../../redux/reducers/authReducer";
 import { setAlert } from "../../redux/reducers/alertReducer";
 import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+// import { register } from "../../redux/reducers/authReducer";
 
 class SignUp extends Component {
   constructor(props) {
@@ -25,6 +27,7 @@ class SignUp extends Component {
   onSubmit = event => {
     event.preventDefault();
     const { name, email, password, confirmPassword } = this.state;
+    const { register } = this.props;
     if (
       name === "" ||
       email === "" ||
@@ -142,17 +145,20 @@ class SignUp extends Component {
 }
 
 // remember to import propTypes
+/**
+ * PROP TYPES
+ */
 // SignUp.propTypes = {
 //   setAlert: PropTypes.func.isRequired,
 //   register: PropTypes.func.isRequired,
 //   isAuthenticated: PropTypes.bool
 // };
 
-// const mapStateToProps = state => ({
-//   isAuthenticated: state.auth.isAuthenticated
-// });
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
 
-export default SignUp;
+export default connect(mapStateToProps, { register })(SignUp);
 
 // <div className="form-container">
 //   <h1>
