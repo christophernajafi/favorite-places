@@ -28,7 +28,7 @@ const REMOVE_ALERT = "REMOVE_ALERT";
  */
 
 // Set and Remove Alert
-export const alert = (message, alertType, timeout = 5000) => dispatch => {
+export const setAlert = (message, alertType, timeout = 5000) => dispatch => {
   const id = uuid.v4();
   // dispatch(setAlert(message, alertType, id));
   console.log("ALERT");
@@ -53,11 +53,18 @@ const initialState = {
  */
 
 const alertReducer = (state = initialState, action) => {
+  const newState = { ...state };
   switch (action.type) {
     case SET_ALERT:
-      return [...state, action.payload];
+      newState.alerts = [...action.payload];
+      return newState;
+    // return [...state, action.payload];
     case REMOVE_ALERT:
-      return state.filter(alert => alert.id !== action.payload);
+      newState.alerts = newState.alerts.filter(
+        alert => alert.id !== action.payload
+      );
+      return newState;
+    // return state.filter(alert => alert.id !== action.payload);
     default:
       return state;
   }

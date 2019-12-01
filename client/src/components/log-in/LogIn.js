@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./log-in.css";
 import { login } from "../../redux/reducers/authReducer";
-import { alert } from "../../redux/reducers/alertReducer";
+import { setAlert } from "../../redux/reducers/alertReducer";
 import { Link, Redirect } from "react-router-dom";
+import { connect } from "react-redux";
+import PropTypes from "prop-types";
 
 class LogIn extends Component {
   constructor(props) {
@@ -21,15 +23,12 @@ class LogIn extends Component {
   onSubmit = event => {
     event.preventDefault();
     const { email, password } = this.state;
+    const { login } = this.props;
     if (email === "" || password === "") {
-      alert("Please fill in all fields", "danger");
-      console.log("Please fill in all fields");
+      setAlert("Please fill in all fields", "danger");
     } else {
-      login({
-        email,
-        password
-      });
-      console.log(email + ", " + password);
+      login(email, password);
+      console.log("props: ", this.props);
     }
   };
 
@@ -75,17 +74,18 @@ class LogIn extends Component {
   }
 }
 
-// remember to import propTypes
-// LogIn.propTypes = {
-//   login: PropTypes.func.isRequired,
-//   isAuthenticated: PropTypes.bool
-// };
+LogIn.propTypes = {
+  login: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
+};
 
-// const mapStateToProps = state => ({
-//   isAuthenticated: state.auth.isAuthenticated
-// });
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
 
-export default LogIn;
+export default connect(mapStateToProps, { login })(LogIn);
+
+// export default LogIn;
 
 // <div className="form-container">
 //   <h1>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import "./sign-up.css";
 import { register } from "../../redux/reducers/authReducer";
-import { alert } from "../../redux/reducers/alertReducer";
+import { setAlert } from "../../redux/reducers/alertReducer";
 import { Link, Redirect } from "react-router-dom";
 
 class SignUp extends Component {
@@ -31,10 +31,10 @@ class SignUp extends Component {
       password === "" ||
       confirmPassword === ""
     ) {
-      alert("Please enter all fields", "danger");
+      setAlert("Please enter all fields", "danger");
       console.log("Please enter all fields.");
     } else if (password !== confirmPassword) {
-      alert("Passwords do not match", "danger");
+      setAlert("Passwords do not match", "danger");
       console.log("Password do not match.");
     } else {
       console.log(name, email, password, confirmPassword);

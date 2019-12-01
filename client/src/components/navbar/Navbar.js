@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import "./navbar.css";
 // eslint-disable-next-line
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
+import PropTypes from "prop-types";
+import { logout } from "../../redux/reducers/authReducer";
 
 /*
 When not authenticated, user should see links for Log In and Sign Up
@@ -11,9 +13,15 @@ When authenticated, user should see links for My Lists and Dropdown Menu (Settin
 */
 
 // dummy auth value
-const isAuthenticated = false;
+// const isAuthenticated = false;
 
 const NavbarComponent = props => {
+  const { isAuthenticated, logout } = props;
+
+  // const guestLinks
+
+  // const authLinks
+
   return (
     <Navbar bg="light" expand="lg" sticky="top">
       <Navbar.Brand href="/">Favorite Places</Navbar.Brand>
@@ -42,7 +50,9 @@ const NavbarComponent = props => {
               >
                 <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">Log Out</NavDropdown.Item>
+                <NavDropdown.Item onClick={logout} href="#!">
+                  Log Out
+                </NavDropdown.Item>
               </NavDropdown>
             </Fragment>
           )}
@@ -54,16 +64,16 @@ const NavbarComponent = props => {
 };
 
 // remember to import propTypes
-// NavbarComponent.propTypes = {
-//   login: PropTypes.func.isRequired,
-//   isAuthenticated: PropTypes.bool
-// };
+NavbarComponent.propTypes = {
+  logout: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool
+};
 
 const mapStateToProps = state => {
   return {
-    searchResults: state.search.searchResults
-    //   isAuthenticated: state.auth.isAuthenticated
+    searchResults: state.search.searchResults,
+    isAuthenticated: state.auth.isAuthenticated
   };
 };
 
-export default connect(mapStateToProps)(NavbarComponent);
+export default connect(mapStateToProps, { logout })(NavbarComponent);
