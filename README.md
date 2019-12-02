@@ -46,4 +46,3 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Dark mode
 - Software design document
 - Webpack
-- Sass

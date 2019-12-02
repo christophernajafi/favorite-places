@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import SearchBar from "../search-bar/SearchBar";
 import { connect } from "react-redux";
 import "./navbar.css";
-// eslint-disable-next-line
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { logout } from "../../redux/reducers/authReducer";
@@ -10,17 +9,15 @@ import { logout } from "../../redux/reducers/authReducer";
 /*
 When not authenticated, user should see links for Log In and Sign Up
 When authenticated, user should see links for My Lists and Dropdown Menu (Settings, Log Out)
+When authenticated, Dropdown Menu should show user's name and profile pic
 */
-
-// dummy auth value
-// const isAuthenticated = false;
 
 const NavbarComponent = props => {
   const { isAuthenticated, logout } = props;
 
-  // const guestLinks
+  // const guestLinks = ()
 
-  // const authLinks
+  // const authLinks = ()
 
   return (
     <Navbar bg="light" expand="lg" sticky="top">
