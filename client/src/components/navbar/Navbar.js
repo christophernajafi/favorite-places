@@ -45,7 +45,7 @@ const NavbarComponent = props => {
 
               {/* dropdown should display user's first name */}
               <NavDropdown
-                title={<i className="far fa-user-circle"> Chris</i>}
+                title={<i className="far fa-user-circle"> Hello</i>}
                 id="basic-nav-dropdown"
               >
                 <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
