@@ -13,11 +13,32 @@ When authenticated, Dropdown Menu should show user's name and profile pic
 */
 
 const NavbarComponent = props => {
-  const { isAuthenticated, logout } = props;
+  const { isAuthenticated, logout, searchResults } = props;
 
-  // const guestLinks = ()
+  const guestLinks = (
+    <Fragment>
+      <Nav.Link href="/log-in">Log In</Nav.Link>
+      <Nav.Link href="/sign-up">Sign Up</Nav.Link>
+    </Fragment>
+  );
 
-  // const authLinks = ()
+  const authLinks = (
+    <Fragment>
+      <Nav.Link href="/lists">My Lists</Nav.Link>
+
+      {/* dropdown menu should display user's first name and profile pic */}
+      <NavDropdown
+        title={<i className="far fa-user-circle"> Hello</i>}
+        id="basic-nav-dropdown"
+      >
+        <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
+        <NavDropdown.Divider />
+        <NavDropdown.Item onClick={logout} href="#!">
+          Log Out
+        </NavDropdown.Item>
+      </NavDropdown>
+    </Fragment>
+  );
 
   return (
     <Navbar bg="light" expand="lg" sticky="top">
@@ -26,44 +47,19 @@ const NavbarComponent = props => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
           <Nav.Link href="/about">About</Nav.Link>
-
-          {/* displayed when not authenticated */}
-          {!isAuthenticated && (
-            <Fragment>
-              <Nav.Link href="/log-in">Log In</Nav.Link>
-              <Nav.Link href="/sign-up">Sign Up</Nav.Link>
-            </Fragment>
-          )}
-
-          {/* displayed when authenticated */}
-          {isAuthenticated && (
-            <Fragment>
-              <Nav.Link href="/lists">My Lists</Nav.Link>
-
-              {/* dropdown should display user's first name */}
-              <NavDropdown
-                title={<i className="far fa-user-circle"> Hello</i>}
-                id="basic-nav-dropdown"
-              >
-                <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item onClick={logout} href="#!">
-                  Log Out
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Fragment>
-          )}
+          {!isAuthenticated && guestLinks}
+          {isAuthenticated && authLinks}
         </Nav>
-        {props.searchResults.length > 0 && <SearchBar />}
+        {searchResults.length > 0 && <SearchBar />}
       </Navbar.Collapse>
     </Navbar>
   );
 };
 
-// remember to import propTypes
 NavbarComponent.propTypes = {
   logout: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool
+  isAuthenticated: PropTypes.bool,
+  searchResults: PropTypes.array
 };
 
 const mapStateToProps = state => {
