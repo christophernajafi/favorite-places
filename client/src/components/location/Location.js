@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+// convert to function
+
 class Location extends Component {
   state = {
     latitude: "",

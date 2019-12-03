@@ -7,6 +7,8 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 // import { register } from "../../redux/reducers/authReducer";
 
+// convert to function
+
 class SignUp extends Component {
   constructor(props) {
     super(props);

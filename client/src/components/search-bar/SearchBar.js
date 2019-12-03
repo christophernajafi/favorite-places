@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getSearchResults } from "../../redux/reducers/searchResultsReducer";
 
+// convert to function
+
 class SearchBar extends Component {
   state = {
     searchTerms: "",

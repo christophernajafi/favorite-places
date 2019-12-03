@@ -7,6 +7,8 @@ import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 
+// convert to function
+
 class LogIn extends Component {
   constructor(props) {
     super(props);
