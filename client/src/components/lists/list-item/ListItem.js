@@ -1,14 +1,13 @@
 import React, { Fragment } from "react";
-import "./single-list.css";
 
-const SingleList = () => {
+const ListItem = () => {
   return (
     <Fragment>
       <div className="container">
-        <div className="jumbotron">Single List</div>
+        <div className="jumbotron">List Item</div>
       </div>
     </Fragment>
   );
 };
 
-export default SingleList;
+export default ListItem;

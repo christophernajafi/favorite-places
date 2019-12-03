@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 
-const SingleListPage = () => {
+const ListItemPage = () => {
   return <Fragment>This is a single list page</Fragment>;
 };
 
-export default SingleListPage;
+export default ListItemPage;
