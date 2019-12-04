@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 import { Jumbotron, Container } from "react-bootstrap";
+
 import "./about.css";
 
 const About = () => {

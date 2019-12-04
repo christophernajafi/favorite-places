@@ -1,8 +1,9 @@
 import React, { Fragment } from "react";
-import "./lists.css";
 import { connect } from "react-redux";
 import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
+
+import "./lists.css";
 
 /*
 Not authenticated should be redirected to log in page

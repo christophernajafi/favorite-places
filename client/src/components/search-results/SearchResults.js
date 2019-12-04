@@ -1,5 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
+
 import SearchResultsItem from "./search-results-item/SearchResultsItem";
 
 const SearchResults = props => {

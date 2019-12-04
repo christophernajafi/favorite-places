@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
-import "./sign-up.css";
+import { connect } from "react-redux";
+
 import { register } from "../../redux/reducers/authReducer";
 import { setAlert } from "../../redux/reducers/alertReducer";
 import { Link, Redirect } from "react-router-dom";
-import { connect } from "react-redux";
 // import { register } from "../../redux/reducers/authReducer";
+import "./sign-up.css";
 
 // convert to function
 

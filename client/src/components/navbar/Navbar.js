@@ -1,10 +1,11 @@
 import React, { Fragment } from "react";
-import SearchBar from "../search-bar/SearchBar";
 import { connect } from "react-redux";
-import "./navbar.css";
 import { Navbar, Nav, NavDropdown } from "react-bootstrap";
 import PropTypes from "prop-types";
+
+import SearchBar from "../search-bar/SearchBar";
 import { logout } from "../../redux/reducers/authReducer";
+import "./navbar.css";
 
 /*
 When not authenticated, user should see links for Log In and Sign Up

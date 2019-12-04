@@ -1,10 +1,11 @@
 import React, { Fragment } from "react";
 import { connect } from "react-redux";
+import PropTypes from "prop-types";
+
 import SearchBar from "../search-bar/SearchBar";
 import SearchResults from "../search-results/SearchResults";
 import "./front-page.css";
 // import Logo from "../logo/Logo";
-import PropTypes from "prop-types";
 
 const FrontPage = props => {
   const { searchResults } = props;

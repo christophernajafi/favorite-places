@@ -1,5 +1,6 @@
 import React from "react";
 import Rater from "react-rater";
+
 import "react-rater/lib/react-rater.css";
 import "./search-results-item.css";
 
