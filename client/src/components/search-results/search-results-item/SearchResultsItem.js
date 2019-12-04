@@ -1,9 +1,9 @@
 import React from "react";
 import Rater from "react-rater";
 import "react-rater/lib/react-rater.css";
-import "./single-result.css";
+import "./search-results-item.css";
 
-const SingleSearchResult = props => {
+const SearchResultsItem = props => {
   const {
     categories,
     display_phone,
@@ -62,19 +62,4 @@ const SingleSearchResult = props => {
   );
 };
 
-export default SingleSearchResult;
-
-// <div>
-// 	<img src={image_url} alt="" />
-// 	<br />
-// 	<span className="font-weight-bold">{name}</span>
-// 	<br />
-// 	{rating} ({review_count})
-// 	<br />
-// 	{categoryTitles}
-// 	<br />
-// 	{displayAddress}
-// 	<br />
-// 	{display_phone}
-// 	<br />
-// </div>
+export default SearchResultsItem;
