@@ -1,4 +1,4 @@
-# Favorite Places v1.0
+# Favorite Places v1.0.0
 
 A Single-Page Application that enables a user to search for venues, add them to a list, and view their locations on a map.
 
@@ -39,10 +39,11 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Settings page for user to change name, email, or password
 - styled-components
 - Ability to upload a profile pic
+- Weather report for a location using AccuWeather API
+- Webpack
 - Tests using Jest, Enzyme, and Puppeteer
 - CI/CD using CircleCI
-- Weather report for a location using AccuWeather API
 - Turn into a PWA
 - Dark mode
+- Code splitting using React Suspense
 - Software design document
-- Webpack
