@@ -1,16 +1,16 @@
 import React, { Fragment } from "react";
-import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
+// import { connect } from "react-redux";
+// import { Redirect } from "react-router-dom";
 
 /*
 Not authenticated should be redirected to log in page
 */
 
-const Settings = props => {
-  const { isAuthenticated } = props;
-  if (!isAuthenticated) {
-    return <Redirect to="/log-in" />;
-  }
+const Settings = () => {
+  // const { isAuthenticated } = props;
+  // if (!isAuthenticated) {
+  //   return <Redirect to="/log-in" />;
+  // }
 
   return (
     <Fragment>
@@ -25,10 +25,11 @@ const Settings = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    isAuthenticated: state.auth.isAuthenticated
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     isAuthenticated: state.auth.isAuthenticated
+//   };
+// };
 
-export default connect(mapStateToProps)(Settings);
+// export default connect(mapStateToProps)(Settings);
+export default Settings;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { connect } from "react-redux";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 import { login } from "../../redux/reducers/authReducer";
@@ -35,9 +35,9 @@ class LogIn extends Component {
     }
   };
 
-  if(isAuthenticated) {
-    return <Redirect to="/" />;
-  }
+  // if(isAuthenticated) {
+  //   return <Redirect to="/" />;
+  // }
 
   render() {
     const { email, password } = this.state;

@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-import { connect } from "react-redux";
-import { Redirect } from "react-router-dom";
-import PropTypes from "prop-types";
+// import { connect } from "react-redux";
+// import { Redirect } from "react-router-dom";
+// import PropTypes from "prop-types";
 
 import "./lists.css";
 
@@ -9,11 +9,11 @@ import "./lists.css";
 Not authenticated should be redirected to log in page
 */
 
-const Lists = props => {
-  const { isAuthenticated } = props;
-  if (!isAuthenticated) {
-    return <Redirect to="/log-in" />;
-  }
+const Lists = () => {
+  // const { isAuthenticated } = props;
+  // if (!isAuthenticated) {
+  //   return <Redirect to="/log-in" />;
+  // }
 
   return (
     <Fragment>
@@ -22,14 +22,15 @@ const Lists = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    isAuthenticated: state.auth.isAuthenticated
-  };
-};
+// const mapStateToProps = state => {
+//   return {
+//     isAuthenticated: state.auth.isAuthenticated
+//   };
+// };
 
-Lists.propTypes = {
-  isAuthenticated: PropTypes.bool
-};
+// Lists.propTypes = {
+//   isAuthenticated: PropTypes.bool
+// };
 
-export default connect(mapStateToProps)(Lists);
+// export default connect(mapStateToProps)(Lists);
+export default Lists;

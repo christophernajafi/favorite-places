@@ -1,5 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
 
 import FrontPage from "../front-page/FrontPage";
 import About from "../about/About";
@@ -10,9 +12,13 @@ import Settings from "../settings/Settings";
 import NotFoundPage from "../not-found-page/NotFoundPage";
 
 /*
-Logged-In Only: lists, settings
-Logged-Out Only: log-in, sign-up
+Authenticated: lists, settings; redirect to log-in
+Not authenticated: log-in, sign-up
 */
+
+// const allVisitorsRoutes=()={}
+// const authRoutes=()=>{}
+// const guestRoutes=()={}
 
 const Routes = () => {
   return (
@@ -28,4 +34,16 @@ const Routes = () => {
   );
 };
 
-export default Routes;
+/**
+ * PROP TYPES
+ */
+Routes.propTypes = {
+  isAuthenticated: PropTypes.bool
+};
+
+const mapStateToProps = state => ({
+  isAuthenticated: state.auth.isAuthenticated
+});
+
+export default connect(mapStateToProps)(Routes);
+// export default Routes;

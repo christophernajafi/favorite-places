@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 import { register } from "../../redux/reducers/authReducer";
 import { setAlert } from "../../redux/reducers/alertReducer";
-import { Link, Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import { register } from "../../redux/reducers/authReducer";
 import "./sign-up.css";
 
@@ -52,9 +52,9 @@ class SignUp extends Component {
     }
   };
 
-  if(isAuthenticated) {
-    return <Redirect to="/" />;
-  }
+  // if(isAuthenticated) {
+  //   return <Redirect to="/" />;
+  // }
 
   render() {
     const { name, email, password, confirmPassword } = this.state;
