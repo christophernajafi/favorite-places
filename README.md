@@ -42,8 +42,10 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - User profile page
 - Weather report for a location using AccuWeather API
 - Webpack
-- Tests using Jest, Enzyme, and Puppeteer
+- Tests using Jest, Enzyme, and Puppeteer or Cypress
 - CI/CD using CircleCI
+- Storybook
+- Next.js
 - Turn into a PWA
 - Dark mode
 - Code splitting using React Suspense
