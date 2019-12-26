@@ -34,6 +34,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Spell correction for misspelled search terms and location
 - Sign up with Facebook
 - Sign up with Google
+- Password reset using Nodemailer and SendGrid
 - Email verification at sign up
 - Strong password enforcement
 - Settings page for user to change name, email, or password
@@ -50,3 +51,4 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Dark mode
 - Code splitting using React Suspense
 - Software design document
+- Two-factor authentication
