@@ -41,6 +41,8 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - styled-components
 - Ability to upload a profile pic
 - User profile page
+- Rate limiting
+- Protection from HTTP parameter pollution
 - Weather report for a location using AccuWeather API
 - Webpack
 - Tests using Jest, Enzyme, and Puppeteer or Cypress
