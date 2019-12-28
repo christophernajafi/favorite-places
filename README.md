@@ -54,3 +54,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Code splitting using React Suspense
 - Software design document
 - Two-factor authentication
+
+## Deployed
+
+<https://favorite-places-cn.herokuapp.com/>
