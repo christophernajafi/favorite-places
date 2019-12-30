@@ -44,6 +44,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Rate limiting
 - Protection from HTTP parameter pollution
 - Weather report for a location using AccuWeather API
+- Admin page and controls
 - Webpack
 - Tests using Jest, Enzyme, and Puppeteer or Cypress
 - CI/CD using CircleCI
