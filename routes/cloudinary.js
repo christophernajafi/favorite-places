@@ -3,6 +3,8 @@ const router = express.Router();
 const axios = require("axios");
 require("dotenv").config();
 
+const cloudinaryApiKey = process.env.CLOUDINARY_API_KEY;
+
 const preset = {};
 
 const uploadProfilePic = () => {};
