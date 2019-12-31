@@ -6,7 +6,11 @@ require("dotenv").config();
 
 const cloudinaryApiKey = process.env.CLOUDINARY_API_KEY;
 
-const preset = {};
+const preset = {
+  cloudName: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  uploadPreset: process.env.UPLOAD_PRESET
+};
 
 const uploadProfilePic = (file, options, callback) => {
   cloudinary.upload(file, options, callback);
