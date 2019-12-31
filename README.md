@@ -39,7 +39,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Strong password enforcement
 - Settings page for user to change name, email, or password
 - styled-components
-- Ability to upload a profile pic
+- Ability to upload a profile pic using Cloudinary API
 - User profile page
 - Rate limiting
 - Protection from HTTP parameter pollution
