@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const config = require("config");
-const db = config.get("mongoURI");
+const mongoURI = config.get("mongoURI");
 
 const options = {
   useNewUrlParser: true,
@@ -11,7 +11,7 @@ const options = {
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(db, options);
+    await mongoose.connect(mongoURI, options);
     console.log("############################################");
     console.log("------------ MongoDB Connected -------------");
     console.log("############################################");
