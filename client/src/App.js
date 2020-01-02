@@ -13,6 +13,7 @@ import { loadUser } from "./redux/reducers/authReducer";
 
 // import "./App.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
