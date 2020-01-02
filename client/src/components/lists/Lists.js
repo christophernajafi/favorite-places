@@ -3,6 +3,8 @@ import React, { Fragment } from "react";
 // import { Redirect } from "react-router-dom";
 // import PropTypes from "prop-types";
 
+// eslint-disable-next-line
+import List from "./list-item-page/ListItemPage";
 import "./lists.css";
 
 /*
