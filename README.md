@@ -60,3 +60,14 @@ A Single-Page Application that enables a user to search for venues, add them to 
 ## Deployed
 
 <https://favorite-places-cn.herokuapp.com/>
+
+## Environmental Variables
+
+### Client
+
+- REACT_APP_MAPBOX_API_KEY
+- REACT_APP_MAPBOX_STYLE
+
+### Server
+
+- YELP_API_KEY
