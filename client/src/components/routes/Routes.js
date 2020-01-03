@@ -19,24 +19,6 @@ const Routes = props => {
   const { isAuthenticated } = props;
 
   // <PrivateRoute path='/name-of-path' component={NameOfComponent} />
-  // eslint-disable-next-line
-  const AuthOnlyRoute = ({ component: Component, ...rest }) => (
-    <Route
-      {...rest}
-      render={props =>
-        isAuthenticated ? (
-          <Component {...props} />
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/log-in",
-              state: { from: props.location }
-            }}
-          />
-        )
-      }
-    />
-  );
 
   // eslint-disable-next-line
   const GuestOnlyRoute = ({ component: Component, ...rest }) => (
@@ -49,6 +31,27 @@ const Routes = props => {
           <Redirect
             to={{
               pathname: "/",
+              // eslint-disable-next-line
+              state: { from: props.location }
+            }}
+          />
+        )
+      }
+    />
+  );
+
+  // eslint-disable-next-line
+  const AuthOnlyRoute = ({ component: Component, ...rest }) => (
+    <Route
+      {...rest}
+      render={props =>
+        isAuthenticated ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/log-in",
+              // eslint-disable-next-line
               state: { from: props.location }
             }}
           />
@@ -58,8 +61,8 @@ const Routes = props => {
   );
 
   /*
-  GuestOnlyRoute: log-in, sign-up; redirect to home
-  AuthOnlyRoute: lists, settings; redirect to log-in
+  GuestOnlyRoute: log-in, sign-up; auth, redirects to home
+  AuthOnlyRoute: lists, settings; !auth, redirects to log-in
 */
 
   return (
@@ -68,7 +71,8 @@ const Routes = props => {
       <Route exact path="/about" component={About} />
       {/* <Route exact path="/log-in" component={LogIn} /> */}
       <GuestOnlyRoute path="/log-in" component={LogIn} />
-      <Route exact path="/sign-up" component={SignUp} />
+      {/* <Route exact path="/sign-up" component={SignUp} /> */}
+      <GuestOnlyRoute exact path="/sign-up" component={SignUp} />
       <Route exact path="/lists" component={Lists} />
       {/* <AuthOnlyRoute exact path="/lists" component={Lists} /> */}
       <Route exact path="/settings" component={Settings} />
