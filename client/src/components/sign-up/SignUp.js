@@ -49,9 +49,10 @@ class SignUp extends Component {
         email,
         password
       });
-      if (this.props.isAuthenticated) {
-        this.props.history.push("/");
-      }
+      this.props.history.push("/");
+      // if (this.props.isAuthenticated) {
+      //   this.props.history.push("/");
+      // }
     }
   };
 

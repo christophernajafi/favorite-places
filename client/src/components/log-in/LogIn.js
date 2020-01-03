@@ -31,9 +31,10 @@ class LogIn extends Component {
       setAlert("Please fill in all fields", "danger");
     } else {
       login(email, password);
-      if (this.props.isAuthenticated) {
-        this.props.history.push("/");
-      }
+      this.props.history.push("/");
+      // if (this.props.isAuthenticated) {
+      //   this.props.history.push("/");
+      // }
     }
   };
 
