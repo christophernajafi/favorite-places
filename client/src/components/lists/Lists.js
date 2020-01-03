@@ -4,12 +4,17 @@ import React, { Fragment } from "react";
 // import PropTypes from "prop-types";
 
 // eslint-disable-next-line
-import List from "./list-item-page/ListItemPage";
+import ListItem from "./lists-item/ListsItem";
 import "./lists.css";
 
 /*
 Not authenticated should be redirected to log in page
 */
+
+// This page will contain a list of lists
+
+// eslint-disable-next-line
+const DUMMY_DATA_LISTS = [];
 
 const Lists = () => {
   // const { isAuthenticated } = props;
@@ -19,7 +24,9 @@ const Lists = () => {
 
   return (
     <Fragment>
-      <div className="jumbotron">Lists</div>
+      <div className="jumbotron">
+        This page will display a list of all lists
+      </div>
     </Fragment>
   );
 };

@@ -18,10 +18,16 @@ const Map = props => {
       <ReactMapGL
         {...viewport}
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API_KEY}
+        mapStyle={process.env.REACT_APP_MAPBOX_STYLE}
         onViewportChange={viewport => {
           setViewport(viewport);
         }}
-      ></ReactMapGL>
+      >
+        {/* map over an array of markers */}
+        <Marker>
+          <div></div>
+        </Marker>
+      </ReactMapGL>
     </Fragment>
   );
 };

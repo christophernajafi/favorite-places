@@ -1,6 +1,10 @@
 import React, { Fragment } from "react";
 
-const ListItem = () => {
+// eslint-disable-next-line
+const DUMMY_DATA_PLACES = [];
+
+// eslint-disable-next-line
+const ListPage = props => {
   return (
     <Fragment>
       <div className="container">
@@ -10,4 +14,4 @@ const ListItem = () => {
   );
 };
 
-export default ListItem;
+export default ListPage;

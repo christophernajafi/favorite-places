@@ -4,7 +4,7 @@ import Map from "../../map/Map";
 // eslint-disable-next-line
 const DUMMY_MAP_DATA = [];
 
-const ListItemPage = () => {
+const ListPageItem = () => {
   return (
     <Fragment>
       <p>This page will contains a list of places.</p>
@@ -15,4 +15,4 @@ const ListItemPage = () => {
   );
 };
 
-export default ListItemPage;
+export default ListPageItem;

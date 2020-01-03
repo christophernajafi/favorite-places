@@ -14,6 +14,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - MongoDB
 - Yelp Fusion API
 - Mapbox API
+- React-Map-GL
 
 ## Features
 
