@@ -1,28 +1,25 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 
-// convert to function
+const Location = () => {
+  // eslint-disable-next-line
+  const [latitude, setLatitude] = useState(null);
+  // eslint-disable-next-line
+  const [longitude, setLongitude] = useState(null);
 
-class Location extends Component {
-  state = {
-    latitude: "",
-    longitude: ""
-  };
-
-  getLocation = () => {
+  const getLocation = () => {
     navigator.geolocation.getCurrentPosition(response => {
       const { latitude, longitude } = response.coords;
-      this.setState({ latitude, longitude });
-      // console.log("Your current location is", this.state);
+      setLatitude(latitude);
+      setLongitude(longitude);
+      // console.log("Your current location is", latitude, longitude);
     });
   };
 
-  componentDidMount() {
-    this.getLocation();
-  }
+  useEffect(() => {
+    getLocation();
+  }, []);
 
-  render() {
-    return <div></div>;
-  }
-}
+  return <div></div>;
+};
 
 export default Location;
