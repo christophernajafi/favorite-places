@@ -24,9 +24,7 @@ const Map = props => {
         }}
       >
         {/* map over an array of markers */}
-        <Marker>
-          <div></div>
-        </Marker>
+        {/* <Marker key={} latitude={} longitude={} /> */}
       </ReactMapGL>
     </Fragment>
   );
