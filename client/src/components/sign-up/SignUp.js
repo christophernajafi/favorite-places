@@ -49,12 +49,9 @@ class SignUp extends Component {
         email,
         password
       });
+      this.props.history.push("/");
     }
   };
-
-  // if(isAuthenticated) {
-  //   return <Redirect to="/" />;
-  // }
 
   render() {
     const { name, email, password, confirmPassword } = this.state;

@@ -31,13 +31,11 @@ class LogIn extends Component {
       setAlert("Please fill in all fields", "danger");
     } else {
       login(email, password);
-      console.log("props: ", this.props);
+      if (this.props.isAuthenticated) {
+        this.props.history.push("/");
+      }
     }
   };
-
-  // if(isAuthenticated) {
-  //   return <Redirect to="/" />;
-  // }
 
   render() {
     const { email, password } = this.state;
