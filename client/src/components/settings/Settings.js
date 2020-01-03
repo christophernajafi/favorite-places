@@ -15,9 +15,8 @@ const Settings = () => {
   return (
     <Fragment>
       <div className="jumbotron">
+        <h4>Settings</h4>
         Upload Profile Pic
-        <br />
-        Settings
         <br />
         Edit Profile
         <br />
