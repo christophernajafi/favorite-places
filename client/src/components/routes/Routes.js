@@ -18,24 +18,12 @@ import NotFoundPage from "../not-found-page/NotFoundPage";
 const Routes = props => {
   const { isAuthenticated } = props;
 
-  // <PrivateRoute path='/name-of-path' component={NameOfComponent} />
-
   // eslint-disable-next-line
   const GuestOnlyRoute = ({ component: Component, ...rest }) => (
     <Route
       {...rest}
       render={props =>
-        !isAuthenticated ? (
-          <Component {...props} />
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/",
-              // eslint-disable-next-line
-              state: { from: props.location }
-            }}
-          />
-        )
+        !isAuthenticated ? <Component {...props} /> : <Redirect to="/" />
       }
     />
   );
@@ -45,17 +33,7 @@ const Routes = props => {
     <Route
       {...rest}
       render={props =>
-        isAuthenticated ? (
-          <Component {...props} />
-        ) : (
-          <Redirect
-            to={{
-              pathname: "/log-in",
-              // eslint-disable-next-line
-              state: { from: props.location }
-            }}
-          />
-        )
+        isAuthenticated ? <Component {...props} /> : <Redirect to="/log-in" />
       }
     />
   );
@@ -72,7 +50,7 @@ const Routes = props => {
       {/* <Route exact path="/log-in" component={LogIn} /> */}
       <GuestOnlyRoute path="/log-in" component={LogIn} />
       {/* <Route exact path="/sign-up" component={SignUp} /> */}
-      <GuestOnlyRoute exact path="/sign-up" component={SignUp} />
+      <GuestOnlyRoute path="/sign-up" component={SignUp} />
       <Route exact path="/lists" component={Lists} />
       {/* <AuthOnlyRoute exact path="/lists" component={Lists} /> */}
       <Route exact path="/settings" component={Settings} />

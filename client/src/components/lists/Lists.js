@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
-// import { connect } from "react-redux";
+import { connect } from "react-redux";
 // import { Redirect } from "react-router-dom";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 
 // eslint-disable-next-line
 import ListItem from "./lists-item/ListsItem";
@@ -16,7 +16,8 @@ Not authenticated should be redirected to log in page
 // eslint-disable-next-line
 const DUMMY_DATA_LISTS = [];
 
-const Lists = () => {
+// eslint-disable-next-line
+const Lists = props => {
   // const { isAuthenticated } = props;
   // if (!isAuthenticated) {
   //   return <Redirect to="/log-in" />;
@@ -31,15 +32,15 @@ const Lists = () => {
   );
 };
 
-// const mapStateToProps = state => {
-//   return {
-//     isAuthenticated: state.auth.isAuthenticated
-//   };
-// };
+const mapStateToProps = state => {
+  return {
+    isAuthenticated: state.auth.isAuthenticated
+  };
+};
 
-// Lists.propTypes = {
-//   isAuthenticated: PropTypes.bool
-// };
+Lists.propTypes = {
+  isAuthenticated: PropTypes.bool
+};
 
-// export default connect(mapStateToProps)(Lists);
-export default Lists;
+export default connect(mapStateToProps)(Lists);
+// export default Lists;

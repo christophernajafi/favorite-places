@@ -5,7 +5,7 @@ import Navbar from "./components/navbar/Navbar";
 import Routes from "./components/routes/Routes";
 import Alerts from "./components/alerts/Alerts";
 
-// import setAuthToken from "./utils/setAuthToken";
+import setAuthToken from "./utils/setAuthToken";
 
 import store from "./redux/index";
 
@@ -15,9 +15,9 @@ import { loadUser } from "./redux/reducers/authReducer";
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "mapbox-gl/dist/mapbox-gl.css";
 
-// if (localStorage.token) {
-//   setAuthToken(localStorage.token);
-// }
+if (localStorage.token) {
+  setAuthToken(localStorage.token);
+}
 
 const App = () => {
   useEffect(() => {

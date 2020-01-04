@@ -23,7 +23,11 @@ router.get("/", async (req, res, err) => {
     const fullEndpoint = endpoint + location + "&" + term;
 
     // prevents Chrome cross-site resource warning
-    res.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=None");
+    // res.setHeader("Set-Cookie", "HttpOnly;Secure;SameSite=None");
+    res.setHeader("set-cookie", [
+      "same-site-cookie=bar; SameSite=Lax",
+      "cross-site-cookie=foo; SameSite=None; Secure"
+    ]);
 
     const { data } = await axios.get(fullEndpoint);
     res.status(200).json(data);
