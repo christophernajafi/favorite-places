@@ -40,7 +40,7 @@ const SearchResultsItem = props => {
                   <br />
                   {displayAddress}
                   <br />
-                  {display_phone}
+                  <i className="fas fa-phone"></i> {display_phone}
                 </div>
                 <a
                   href={url}
