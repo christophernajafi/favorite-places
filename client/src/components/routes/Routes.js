@@ -10,6 +10,7 @@ import SignUp from "../sign-up/SignUp";
 import Lists from "../lists/Lists";
 import Settings from "../settings/Settings";
 import NotFoundPage from "../not-found-page/NotFoundPage";
+import ForgotPassword from "../forgot-password/ForgotPassword";
 
 // const allVisitorsRoutes=()=>{}
 // const guestOnlyRoutes=()=>{}
@@ -51,6 +52,7 @@ const Routes = props => {
       <GuestOnlyRoute path="/log-in" component={LogIn} />
       {/* <Route exact path="/sign-up" component={SignUp} /> */}
       <GuestOnlyRoute path="/sign-up" component={SignUp} />
+      <GuestOnlyRoute path="/forgot-password" component={ForgotPassword} />
       <Route exact path="/lists" component={Lists} />
       {/* <AuthOnlyRoute exact path="/lists" component={Lists} /> */}
       <Route exact path="/settings" component={Settings} />
