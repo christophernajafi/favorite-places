@@ -1,13 +1,16 @@
 import React, { Fragment, useEffect } from "react";
 
+import { Provider } from "react-redux";
+import { BrowserRouter } from "react-router-dom";
+
 import Navbar from "./components/navbar/Navbar";
-// import Location from "./components/location/Location";
 import Routes from "./components/routes/Routes";
 import Alerts from "./components/alerts/Alerts";
+// import Location from "./components/location/Location";
 
 import setAuthToken from "./utils/setAuthToken";
 
-import store from "./redux/index";
+import store from "./redux";
 
 import { loadUser } from "./redux/reducers/authReducer";
 
@@ -23,13 +26,18 @@ const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
+
   return (
-    <Fragment>
-      <Navbar />
-      <Alerts />
-      <Routes />
-      {/* <Location /> */}
-    </Fragment>
+    <Provider store={store}>
+      <BrowserRouter>
+        <Fragment>
+          <Navbar />
+          <Alerts />
+          <Routes />
+          {/* <Location /> */}
+        </Fragment>
+      </BrowserRouter>
+    </Provider>
   );
 };
 
