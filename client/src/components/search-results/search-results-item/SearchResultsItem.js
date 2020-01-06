@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment } from "react";
 import Rater from "react-rater";
 
 import "react-rater/lib/react-rater.css";
@@ -40,7 +40,11 @@ const SearchResultsItem = props => {
                   <br />
                   {displayAddress}
                   <br />
-                  <i className="fas fa-phone"></i> {display_phone}
+                  {display_phone && (
+                    <Fragment>
+                      <i className="fas fa-phone"></i> {display_phone}
+                    </Fragment>
+                  )}
                 </div>
                 <a
                   href={url}
