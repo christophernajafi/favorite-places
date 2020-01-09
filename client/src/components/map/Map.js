@@ -13,6 +13,16 @@ const Map = props => {
     zoom: 8
   });
 
+  // return average latitude and longitude of all markers
+  const getViewCenter = () => {
+    return [];
+  };
+
+  useEffect(() => {
+    const [lat, long] = getViewCenter();
+    setViewport({ latitude: lat, longitude: long });
+  }, []);
+
   return (
     <Fragment>
       <ReactMapGL
