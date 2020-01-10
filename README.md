@@ -54,8 +54,9 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Turn into a PWA
 - Dark mode
 - Code splitting using React Suspense
-- Software design document
+- Chat using Socket.IO
 - Two-factor authentication
+- Software design document
 
 ## Deployed
 
