@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 
 import NoProfilePic from "./no-profile-pic.jpg";
 
+// eslint-disable-next-line
 const ImageUpload = props => {
   const [file, setFile] = useState();
   const [previewUrl, setPreviewUrl] = useState();
@@ -30,6 +31,7 @@ const ImageUpload = props => {
       setFile(pickedFile);
       setIsValid(true);
       fileIsValid = true;
+      // console.log("picked file: ", pickedFile);
       return;
     } else {
       setIsValid(false);
@@ -41,8 +43,9 @@ const ImageUpload = props => {
 
   const pickImageHandler = () => {
     filePickerRef.current.click();
+    // console.log("previewUrl: ", previewUrl);
     // send image path to backend
-    // console.log(filePickerRef);
+    // console.log("filePickerRef: ", filePickerRef);
     // console.log("image uploaded!");
   };
 
