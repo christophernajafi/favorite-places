@@ -25,7 +25,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Add places to a list
 - Delete places from list
 - View places from a list on a map
-- Alert toasters for invalid input
+- Notification toasts for invalid input
 - Protected routes
 
 ## Future Features

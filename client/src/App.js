@@ -5,7 +5,6 @@ import { BrowserRouter } from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar";
 import Routes from "./components/routes/Routes";
-// import Alerts from "./components/alerts/Alerts";
 // import Location from "./components/location/Location";
 
 import setAuthToken from "./utils/setAuthToken";
@@ -35,7 +34,6 @@ const App = () => {
       <BrowserRouter>
         <Fragment>
           <Navbar />
-          {/* <Alerts /> */}
           <Routes />
           <ToastContainer autoClose={5000} />
           {/* <Location /> */}

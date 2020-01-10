@@ -21,8 +21,11 @@ class SearchBar extends Component {
     const { searchTerms, searchLocation } = this.state;
     const { getSearchResults } = this.props;
     if (!searchTerms.length) {
-      // console.log("Please enter something");
-      toast.warn("Please enter something", {
+      toast.warn("Please enter what you are looking for", {
+        position: toast.POSITION.TOP_RIGHT
+      });
+    } else if (!searchLocation) {
+      toast.warn("Please enter a location", {
         position: toast.POSITION.TOP_RIGHT
       });
     } else {
