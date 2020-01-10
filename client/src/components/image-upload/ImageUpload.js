@@ -1,4 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
+import axios from "axios";
 
 import NoProfilePic from "./no-profile-pic.jpg";
 
@@ -47,6 +48,17 @@ const ImageUpload = props => {
     // send image path to backend
     // console.log("filePickerRef: ", filePickerRef);
     // console.log("image uploaded!");
+  };
+
+  // eslint-disable-next-line
+  const profilePicUpload = async formData => {
+    try {
+      console.log("profilePicUpload: ", formData);
+      const response = await axios.post("/api/profile-pics", formData);
+      console.log("response: ", response);
+    } catch (err) {
+      console.error(err);
+    }
   };
 
   return (
