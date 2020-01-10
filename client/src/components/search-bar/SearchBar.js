@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { toast } from "react-toastify";
 
 import { getSearchResults } from "../../redux/reducers/searchResultsReducer";
 
@@ -20,8 +21,10 @@ class SearchBar extends Component {
     const { searchTerms, searchLocation } = this.state;
     const { getSearchResults } = this.props;
     if (!searchTerms.length) {
-      // need an alert here
-      console.log("Please enter something");
+      // console.log("Please enter something");
+      toast.warn("Please enter something", {
+        position: toast.POSITION.TOP_RIGHT
+      });
     } else {
       getSearchResults(searchTerms, searchLocation);
     }

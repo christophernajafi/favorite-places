@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import Navbar from "./components/navbar/Navbar";
 import Routes from "./components/routes/Routes";
-import Alerts from "./components/alerts/Alerts";
+// import Alerts from "./components/alerts/Alerts";
 // import Location from "./components/location/Location";
 
 import setAuthToken from "./utils/setAuthToken";
@@ -13,6 +13,9 @@ import setAuthToken from "./utils/setAuthToken";
 import store from "./redux";
 
 import { loadUser } from "./redux/reducers/authReducer";
+
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // import "./App.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
@@ -32,8 +35,9 @@ const App = () => {
       <BrowserRouter>
         <Fragment>
           <Navbar />
-          <Alerts />
+          {/* <Alerts /> */}
           <Routes />
+          <ToastContainer autoClose={5000} />
           {/* <Location /> */}
         </Fragment>
       </BrowserRouter>
