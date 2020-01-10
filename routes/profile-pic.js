@@ -18,16 +18,19 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-const uploadProfilePic = (file, options, callback) => {
-  cloudinary.upload(file, options, callback);
-};
+// const uploadProfilePic = (file, options, callback) => {
+//   cloudinary.upload(file, options, callback);
+// };
 
-const deleteProfilePic = () => {};
+// const deleteProfilePic = () => {};
 
-router.get("/profile-pic");
+// router.get("/profile-pic");
 
-router.post("/profile-pic", (req, res, next) => {
+// upload profile pic and store url in MongoDB
+
+router.post("/", (req, res, next) => {
   try {
+    console.log("req.files", req.files);
     const path = Object.values(Object.values(req.files)[0])[0].path;
     console.log("path: ", path);
     const image = cloudinary.uploader.upload(path);
@@ -38,6 +41,6 @@ router.post("/profile-pic", (req, res, next) => {
   }
 });
 
-router.delete("/profile-pic");
+router.delete("/");
 
 module.exports = router;
