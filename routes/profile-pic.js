@@ -7,13 +7,13 @@ require("dotenv").config();
 // const cloudinaryApiKey = process.env.CLOUDINARY_API_KEY;
 
 // const cloudinaryConfig = {
-//   cloudName: process.env.CLOUD_NAME,
+//   cloudName: process.env.CLOUDINARY_CLOUD_NAME,
 //   api_key: process.env.CLOUDINARY_API_KEY,
-//   uploadPreset: process.env.UPLOAD_PRESET
+//   uploadPreset: process.env.CLOUDINARY_UPLOAD_PRESET
 // };
 
 cloudinary.config({
-  cloud_name: process.env.CLOUD_NAME,
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
