@@ -23,6 +23,7 @@ const ImageUpload = props => {
 
   const pickedHandler = event => {
     let pickedFile;
+    // eslint-disable-next-line
     let fileIsValid = isValid;
     if (event.target.files && event.target.files.length === 1) {
       pickedFile = event.target.files[0];
@@ -35,7 +36,7 @@ const ImageUpload = props => {
       fileIsValid = false;
     }
     // eslint-disable-next-line
-    props.onInput(props.id, pickedFile, fileIsValid);
+    // props.onInput(props.id, pickedFile, fileIsValid);
   };
 
   const pickImageHandler = () => {
