@@ -2,6 +2,7 @@ import React, { Fragment, useState } from "react";
 import { connect } from "react-redux";
 // import { Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
+import { Alert } from "react-bootstrap";
 
 // eslint-disable-next-line
 import ListItem from "./lists-item/ListsItem";
@@ -39,7 +40,10 @@ const Lists = props => {
           Create List
         </button>
         <br />
-        {!lists.length && <p>You currently have no lists.</p>}
+        <p></p>
+        {!lists.length && (
+          <Alert variant={"primary"}>You currently have no lists.</Alert>
+        )}
       </div>
       <CreateListModal show={show} onHide={handleClose} />
     </Fragment>
@@ -58,3 +62,13 @@ Lists.propTypes = {
 
 export default connect(mapStateToProps)(Lists);
 // export default Lists;
+
+// eslint-disable-next-line
+const printLists = () => {
+  DUMMY_DATA_LISTS.map(list => (
+    <div key={list.id}>
+      <h3>{list.name}</h3>
+      <p>{list.description}</p>
+    </div>
+  ));
+};

@@ -3,7 +3,12 @@ import React from "react";
 
 // eslint-disable-next-line
 const ListsItem = props => {
-  return "This is a single list.";
+  return (
+    <div>
+      <p>List Name</p>
+      <p>List Description</p>
+    </div>
+  );
 };
 
 export default ListsItem;
