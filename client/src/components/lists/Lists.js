@@ -44,7 +44,7 @@ const Lists = props => {
           Create List
         </button>
         <br />
-        This page will display a list of all lists
+        This page will display a list of all lists belonging to a user.
         <CreateListModal handleShow={handleShow} handleClose={handleClose} />
       </div>
     </Fragment>
