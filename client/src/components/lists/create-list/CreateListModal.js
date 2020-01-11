@@ -12,11 +12,11 @@ const CreateListModal = props => {
         <Modal.Title>Create List</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form.Group controlId="formBasicText">
+        <Form.Group controlId="listName">
           <Form.Label>List Name</Form.Label>
           <Form.Control type="text" placeholder="Enter list name" />
         </Form.Group>
-        <Form.Group controlId="formBasicText">
+        <Form.Group controlId="listDescription">
           <Form.Label>Description</Form.Label>
           <Form.Control type="text" placeholder="Enter a description" />
         </Form.Group>
