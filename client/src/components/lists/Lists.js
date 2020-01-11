@@ -14,8 +14,13 @@ Not authenticated should be redirected to log in page
 */
 
 // eslint-disable-next-line
+
 const DUMMY_DATA_LISTS = [];
-// const DUMMY_DATA_LISTS = [{}];
+// const DUMMY_DATA_LISTS = [
+//   { id: 1, name: "a list", description: "a description" },
+//   { id: 2, name: "b list", description: "b description" },
+//   { id: 3, name: "ac list", description: "c description" }
+// ];
 
 // eslint-disable-next-line
 const Lists = props => {
@@ -53,6 +58,17 @@ const Lists = props => {
           </Alert>
         )}
       </div>
+      {lists.length > 0 && (
+        <div className="container mt-5">
+          <ul className="list-group mb-4">
+            {lists.map(list => (
+              <li key={list.id} className="list-group-item">
+                <ListItem list={list} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <CreateListModal show={show} onHide={handleClose} />
     </Fragment>
   );
