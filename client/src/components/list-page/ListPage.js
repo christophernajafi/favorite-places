@@ -1,14 +1,35 @@
 import React, { Fragment } from "react";
 
 // eslint-disable-next-line
-const DUMMY_DATA_PLACES = [];
+const DUMMY_DATA_LISTS = [
+  {
+    id: 1,
+    name: "My Favorite Museums in New York",
+    description: "The Met, Whitney, and a few others",
+    places: []
+  },
+  {
+    id: 2,
+    name: "My Favorite Cafes in Paris",
+    description: "Les Deux Magots, et autres",
+    places: []
+  },
+  {
+    id: 3,
+    name: "My Favorite Beaches ",
+    description: "Rose Cove, Caspar",
+    places: []
+  }
+];
 
 // eslint-disable-next-line
 const ListPage = props => {
   return (
     <Fragment>
       <div className="container">
-        <div className="jumbotron">List Item</div>
+        <div className="jumbotron">
+          <h1 className="text-center">List Page Title</h1>
+        </div>
         {/* map over every place in list */}
         {/* display map showing marker for every place */}
       </div>

@@ -5,7 +5,9 @@ import "./lists-item.css";
 const ListsItem = props => {
   // eslint-disable-next-line
   const { name, description } = props.list;
-  console.log(props);
+
+  // console.log(props);
+
   return (
     <div className="card w-75 list-item-card ">
       <div className="card-body">
