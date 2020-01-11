@@ -41,7 +41,7 @@ class SignUp extends Component {
       // setAlert("Please enter all fields", "danger");
       console.log("Please enter all fields.");
     } else if (password !== confirmPassword) {
-      toast.warn("Passwords do not match", {
+      toast.warn("Your password and confirmation password do not match.", {
         position: toast.POSITION.TOP_RIGHT
       });
       // setAlert("Passwords do not match", "danger");
