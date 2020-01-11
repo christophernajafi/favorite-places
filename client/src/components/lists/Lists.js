@@ -12,8 +12,6 @@ import "./lists.css";
 Not authenticated should be redirected to log in page
 */
 
-// This page will contain a list of lists
-
 // eslint-disable-next-line
 const DUMMY_DATA_LISTS = [{}];
 
@@ -24,28 +22,21 @@ const Lists = props => {
   //   return <Redirect to="/log-in" />;
   // }
 
-  // eslint-disable-next-line
   const [show, setShow] = useState(false);
 
-  // eslint-disable-next-line
   const handleClose = () => setShow(false);
-  // eslint-disable-next-line
-  const handleShow = () => setShow(true);
 
-  // eslint-disable-next-line
-  const handleOnClick = () => {
-    console.log("click");
-  };
+  const handleShow = () => setShow(true);
 
   return (
     <Fragment>
       <div className="jumbotron">
-        <button className="btn btn-primary" onClick={handleOnClick}>
+        <button className="btn btn-primary" onClick={handleShow}>
           Create List
         </button>
         <br />
-        This page will display a list of all lists belonging to a user.
-        <CreateListModal handleShow={handleShow} handleClose={handleClose} />
+        This page will display all lists belonging to a user.
+        <CreateListModal show={show} onHide={handleClose} />
       </div>
     </Fragment>
   );
