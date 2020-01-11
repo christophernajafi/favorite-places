@@ -12,7 +12,12 @@ const UserSchema = mongoose.Schema({
   },
   password: {
     type: String,
-    required: true
+    required: true,
+    minlength: 6
+  },
+  profilePic: {
+    type: String,
+    required: false
   },
   date: {
     type: Date,

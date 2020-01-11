@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { connect } from "react-redux";
+import { toast } from "react-toastify";
 
 import { register } from "../../redux/reducers/authReducer";
-import { setAlert } from "../../redux/reducers/alertReducer";
+// import { setAlert } from "../../redux/reducers/alertReducer";
 import { Link } from "react-router-dom";
 // import { register } from "../../redux/reducers/authReducer";
 import "./sign-up.css";
@@ -37,13 +38,16 @@ class SignUp extends Component {
       password === "" ||
       confirmPassword === ""
     ) {
-      setAlert("Please enter all fields", "danger");
+      // setAlert("Please enter all fields", "danger");
       console.log("Please enter all fields.");
     } else if (password !== confirmPassword) {
-      setAlert("Passwords do not match", "danger");
-      console.log("Password do not match.");
+      toast.warn("Passwords do not match", {
+        position: toast.POSITION.TOP_RIGHT
+      });
+      // setAlert("Passwords do not match", "danger");
+      // console.log("Password do not match.");
     } else {
-      console.log(name, email, password, confirmPassword);
+      // console.log(name, email, password, confirmPassword);
       register({
         name,
         email,
