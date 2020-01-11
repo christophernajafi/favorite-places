@@ -25,6 +25,9 @@ const CreateListModal = props => {
         <Button variant="primary" type="submit" onClick={onHide}>
           Save
         </Button>
+        <Button variant="secondary" type="submit" onClick={onHide}>
+          Cancel
+        </Button>
       </Modal.Footer>
     </Modal>
   );

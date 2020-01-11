@@ -34,15 +34,23 @@ const Lists = props => {
 
   return (
     <Fragment>
-      <div className="jumbotron">
-        <p>This page will display all lists belonging to a user.</p>
-        <button className="btn btn-primary" onClick={handleShow}>
-          Create List
+      <div className="container">
+        <button className="btn btn-primary float-right" onClick={handleShow}>
+          <i className="fas fa-plus"></i> Create List
         </button>
+      </div>
+      <div className="jumbotron">
+        <h1 className="text-center">Lists</h1>
+        <p />
+        <p className="text-center">
+          This page will display all lists belonging to a user.
+        </p>
         <br />
         <p></p>
         {!lists.length && (
-          <Alert variant={"primary"}>You currently have no lists.</Alert>
+          <Alert variant={"primary"}>
+            <div className="text-center">You currently have no lists.</div>
+          </Alert>
         )}
       </div>
       <CreateListModal show={show} onHide={handleClose} />
