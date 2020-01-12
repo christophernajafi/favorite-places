@@ -1,5 +1,7 @@
 import React, { Fragment } from "react";
 
+import Map from "../map/Map";
+
 // eslint-disable-next-line
 const DUMMY_DATA_LISTS = [
   {
@@ -32,6 +34,9 @@ const ListPage = props => {
         </div>
         {/* map over every place in list */}
         {/* display map showing marker for every place */}
+      </div>
+      <div className="">
+        <Map />
       </div>
     </Fragment>
   );
