@@ -1,4 +1,5 @@
 import React, { Fragment } from "react";
+import { Alert } from "react-bootstrap";
 
 import Map from "../map/Map";
 
@@ -24,6 +25,8 @@ const DUMMY_DATA_LISTS = [
   }
 ];
 
+const places = [{}];
+
 // eslint-disable-next-line
 const ListPage = props => {
   return (
@@ -34,9 +37,14 @@ const ListPage = props => {
         </div>
         {/* map over every place in list */}
         {/* display map showing marker for every place */}
-      </div>
-      <div className="">
-        <Map />
+        {places.length > 0 && <Map />}
+        {!places.length && (
+          <Alert variant={"primary"}>
+            <div className="text-center">
+              You currently have no places in this list.
+            </div>
+          </Alert>
+        )}
       </div>
     </Fragment>
   );
