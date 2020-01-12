@@ -29,9 +29,18 @@ const DUMMY_DATA_LISTS = [
 
 const places = [
   {
-    name: "Empire State Building",
-    address: "",
-    coordinates: ""
+    categories: "",
+    coordinates: {
+      latitude: "",
+      longitude: ""
+    },
+    display_phone: "",
+    image_url: "",
+    location: "",
+    name: "",
+    rating: "",
+    review_count: "",
+    url: ""
   }
 ];
 

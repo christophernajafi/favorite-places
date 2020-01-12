@@ -23,10 +23,10 @@ const PasswordReset = props => {
     <div className="container">
       <div className="jumbotron">
         <div className="Login">
-          <h1 className="text-center">Trouble Logging In?</h1>
+          <h1 className="text-center">Password Reset</h1>
           <p className="my-1  text-center">
-            Please enter your email address and we will send you an email about
-            how to reset your password.
+            Please enter the email address that you used to register. We will
+            send you an email with a link to reset your password.
           </p>
           <form onSubmit={onSubmit}>
             <FormGroup controlId="email" size="lg">
@@ -42,7 +42,7 @@ const PasswordReset = props => {
             </FormGroup>
 
             <Button block size="lg" disabled={!email} type="submit">
-              Reset Password
+              Send
             </Button>
             <p className="my-1 text-center">
               Back to <Link to="/log-in">Log In</Link>

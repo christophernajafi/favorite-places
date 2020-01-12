@@ -5,6 +5,9 @@ import SearchResultsItem from "./search-results-item/SearchResultsItem";
 
 const SearchResults = props => {
   const { searchResults } = props;
+
+  // console.log(searchResults[0]);
+
   return (
     searchResults.length && (
       <div className="container mt-5">
