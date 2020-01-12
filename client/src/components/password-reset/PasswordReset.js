@@ -33,7 +33,7 @@ const PasswordReset = props => {
               <FormControl
                 autoFocus
                 type="email"
-                placeholder="Email"
+                placeholder="Email address"
                 onChange={onChange}
                 required
                 name="email"
