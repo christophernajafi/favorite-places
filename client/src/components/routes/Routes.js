@@ -10,7 +10,7 @@ import SignUp from "../sign-up/SignUp";
 import Lists from "../lists/Lists";
 import Settings from "../settings/Settings";
 import NotFoundPage from "../not-found-page/NotFoundPage";
-import ForgotPassword from "../forgot-password/ForgotPassword";
+import PasswordReset from "../password-reset/PasswordReset";
 import ListPage from "../list-page/ListPage";
 
 // const allVisitorsRoutes=()=>{}
@@ -53,7 +53,7 @@ const Routes = props => {
       <GuestOnlyRoute path="/log-in" component={LogIn} />
       {/* <Route exact path="/sign-up" component={SignUp} /> */}
       <GuestOnlyRoute path="/sign-up" component={SignUp} />
-      <GuestOnlyRoute path="/forgot-password" component={ForgotPassword} />
+      <GuestOnlyRoute path="/password-reset" component={PasswordReset} />
       <Route exact path="/lists" component={Lists} />
       <Route exact path="/lists/:listId" component={ListPage} />
       {/* <AuthOnlyRoute exact path="/lists" component={Lists} /> */}

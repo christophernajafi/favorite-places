@@ -67,6 +67,10 @@ class LogIn extends Component {
           <Button block size="lg" disabled={!(email && password)} type="submit">
             Log In
           </Button>
+
+          <p className="my-1 text-center">
+            <Link to="/password-reset">Forgot password?</Link>
+          </p>
           <p className="my-1 text-center">
             Don't have an account? <Link to="/sign-up">Sign Up</Link>
           </p>
