@@ -1,13 +1,11 @@
 // eslint-disable-next-line
 import React, { Fragment, useState, useEffect } from "react";
-// eslint-disable-next-line
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 
 import "./map.css";
-import markerIcon from "./skateboarding.svg";
+import markerIcon from "./iconfinder_map-marker_299087.svg";
+// import markerIcon from "./skateboarding.svg";
 import * as parkDate from "./skateboard-parks.json";
-
-// const parkDate = [];
 
 // eslint-disable-next-line
 const Map = props => {
@@ -22,11 +20,13 @@ const Map = props => {
   });
 
   // return average latitude and longitude of all markers
-  // const getViewCenter = () => {
-  //   return [];
+  // const getViewCenter = (coords) => {
+  // const latitude
+  // const longitude
+  //   setViewport({latitude: '', longitude: ''})
   // };
 
-  const [selectedPark, setSelectedPark] = useState(null);
+  const [selectedPlace, setSelectedPlace] = useState(null);
 
   // useEffect(() => {
   //   const [lat, long] = getViewCenter();
@@ -36,7 +36,7 @@ const Map = props => {
   useEffect(() => {
     const listener = e => {
       if (e.key === "Escape") {
-        setSelectedPark(null);
+        setSelectedPlace(null);
       }
     };
     window.addEventListener("keydown", listener);
@@ -56,35 +56,35 @@ const Map = props => {
           setViewport(viewport);
         }}
       >
-        {parkDate.features.map(park => (
+        {parkDate.features.map(place => (
           <Marker
-            key={park.properties.PARK_ID}
-            latitude={park.geometry.coordinates[1]}
-            longitude={park.geometry.coordinates[0]}
+            key={place.properties.place_ID}
+            latitude={place.geometry.coordinates[1]}
+            longitude={place.geometry.coordinates[0]}
           >
             <button
               className="marker-btn"
               onClick={e => {
                 e.preventDefault();
-                setSelectedPark(park);
+                setSelectedPlace(place);
               }}
             >
-              <img src={markerIcon} alt="Skate Park Icon" />
+              <img src={markerIcon} alt="Marker Icon" />
             </button>
           </Marker>
         ))}
 
-        {selectedPark ? (
+        {selectedPlace ? (
           <Popup
-            latitude={selectedPark.geometry.coordinates[1]}
-            longitude={selectedPark.geometry.coordinates[0]}
+            latitude={selectedPlace.geometry.coordinates[1]}
+            longitude={selectedPlace.geometry.coordinates[0]}
             onClose={() => {
-              setSelectedPark(null);
+              setSelectedPlace(null);
             }}
           >
             <div>
-              <h2>{selectedPark.properties.NAME}</h2>
-              <p>{selectedPark.properties.DESCRIPTIO}</p>
+              <h2>{selectedPlace.properties.NAME}</h2>
+              <p>{selectedPlace.properties.DESCRIPTIO}</p>
             </div>
           </Popup>
         ) : null}
