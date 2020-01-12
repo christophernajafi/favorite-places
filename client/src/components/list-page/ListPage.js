@@ -1,6 +1,8 @@
 import React, { Fragment } from "react";
 import { Alert } from "react-bootstrap";
 
+// eslint-disable-next-line
+import ListPageItem from "./list-page-item/ListPageItem";
 import Map from "../map/Map";
 
 // eslint-disable-next-line
@@ -25,7 +27,13 @@ const DUMMY_DATA_LISTS = [
   }
 ];
 
-const places = [{}];
+const places = [
+  {
+    name: "Empire State Building",
+    address: "",
+    coordinates: ""
+  }
+];
 
 // eslint-disable-next-line
 const ListPage = props => {
@@ -35,9 +43,16 @@ const ListPage = props => {
         <div className="jumbotron">
           <h1 className="text-center">List Page Title</h1>
         </div>
-        {/* map over every place in list */}
-        {/* display map showing marker for every place */}
+        {/* Map over every place in list */}
+        {/* {places.length > 0 &&
+          places.map(place => (
+            <li key={place.id} className="list-group-item">
+              <ListPageItem place={place} />
+            </li>
+          ))} */}
+        {/* Display map showing marker for every place */}
         {places.length > 0 && <Map />}
+        {/* Display alert when there are no places in the list */}
         {!places.length && (
           <Alert variant={"primary"}>
             <div className="text-center">
