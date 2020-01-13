@@ -5,7 +5,8 @@ const PrivacyAndSecurity = () => {
     <Fragment>
       <div className="container">
         <div className="jumbotron">
-          <p>Two-Factor Authentication</p>
+          <h4>Two-Factor Authentication</h4>
+          <p>Edit Two-Factor Authentication Setting</p>
         </div>
       </div>
     </Fragment>

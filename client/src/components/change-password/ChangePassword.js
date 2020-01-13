@@ -9,7 +9,6 @@ const ChangePassword = () => {
     confirmNewPassword: ""
   });
 
-  // eslint-disable-next-line
   const { currentPassword, newPassword, confirmNewPassword } = formState;
 
   const handleChange = event => {
@@ -41,7 +40,6 @@ const ChangePassword = () => {
               placeholder="Current Password"
               required
               name="currentPassword"
-              // defaultValue={currentPassword}
             />
           </FormGroup>
           <FormGroup controlId="newPassword" size="lg">
@@ -52,7 +50,6 @@ const ChangePassword = () => {
               placeholder="New Password"
               required
               name="newPassword"
-              // defaultValue={newPassword}
             />
           </FormGroup>
           <FormGroup controlId="confirmNewPassword" size="lg">
@@ -63,7 +60,6 @@ const ChangePassword = () => {
               placeholder="Confirm New Password"
               required
               name="confirmNewPassword"
-              // defaultValue={confirmNewPassword}
             />
           </FormGroup>
           <Button
