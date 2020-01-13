@@ -13,6 +13,7 @@ import NotFoundPage from "../not-found-page/NotFoundPage";
 import PasswordReset from "../password-reset/PasswordReset";
 import ListPage from "../list-page/ListPage";
 import ChangePassword from "../change-password/ChangePassword";
+import EditProfile from "../edit-profile/EditProfile";
 
 // const allVisitorsRoutes=()=>{}
 // const guestOnlyRoutes=()=>{}
@@ -60,6 +61,7 @@ const Routes = props => {
       <Route exact path="/lists/:listId" component={ListPage} />
       {/* <AuthOnlyRoute exact path="/lists" component={Lists} /> */}
       <Route exact path="/settings" component={Settings} />
+      <Route exact path="/edit-profile" component={EditProfile} />
       <Route component={NotFoundPage} />
     </Switch>
   );

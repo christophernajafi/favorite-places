@@ -18,12 +18,14 @@ const ChangePassword = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    // console.log(formState);
-    if (formState.newPassword !== formState.confirmPassword) {
-      toast.warn("Your password and confirmation password do not match.", {
+    // eslint-disable-next-line
+    const { currentPassword, newPassword, confirmPassword } = formState;
+    if (newPassword !== confirmPassword) {
+      toast.warn("Your new password and confirmation password do not match.", {
         position: toast.POSITION.TOP_RIGHT
       });
     }
+    // console.log(formState);
   };
 
   return (

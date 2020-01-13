@@ -21,7 +21,8 @@ const Settings = () => {
         {/* Upload Profile Pic */}
         <ImageUpload />
         <br />
-        Edit Profile
+
+        <Link to="/edit-profile">Edit Profile</Link>
         <br />
         <Link to="/change-password">Change Password</Link>
       </div>
