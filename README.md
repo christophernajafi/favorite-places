@@ -15,6 +15,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Yelp Fusion API
 - Mapbox API
 - React-Map-GL
+- Nodemailer
 
 ## Features
 
@@ -71,7 +72,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 
 ### Server
 
-- YELP_API_KEY
-- CLOUDINARY_CLOUD_NAME
 - CLOUDINARY_API_KEY
 - CLOUDINARY_API_SECRET
+- CLOUDINARY_CLOUD_NAME
+- YELP_API_KEY

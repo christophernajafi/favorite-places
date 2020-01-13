@@ -6,7 +6,7 @@ const sendEmail = async options => {
   // create a transporter
 
   const transporter = nodemailer.createTransport({
-    service: "Gmail",
+    service: "SendGrid",
     auth: {
       user: process.env.EMAIL_USERNAME,
       pass: process.env.EMAIL_PASSWORD
@@ -19,8 +19,8 @@ const sendEmail = async options => {
     from: "Favorite Places <favorite-places@email.com>",
     to: options.email,
     subject: options.subject,
-    text: options.message
-    // html:
+    text: options.text,
+    html: options.html
   };
 
   // Send the email
@@ -28,6 +28,14 @@ const sendEmail = async options => {
   await transporter.sendMail(mailOptions);
 };
 
+// send email with reset link
 router.post("/");
+
+// go to page for changing password
+router.get("/:token");
+
+// change password
+// send confirmation email that password was changed
+router.put("/:token");
 
 module.exports = router;
