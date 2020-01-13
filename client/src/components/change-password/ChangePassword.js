@@ -15,7 +15,7 @@ const ChangePassword = () => {
   const handleChange = event => {
     setFormState({
       ...formState,
-      [event.target.name]: [event.target.value]
+      [event.target.name]: event.target.value
     });
   };
 
@@ -26,7 +26,7 @@ const ChangePassword = () => {
         position: toast.POSITION.TOP_RIGHT
       });
     }
-    // console.log(formState);
+    // console.log("formState: ", formState);
   };
 
   return (
