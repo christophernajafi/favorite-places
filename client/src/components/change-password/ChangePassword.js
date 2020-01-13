@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 const ChangePassword = () => {
   const [formState, setFormState] = useState({
@@ -18,6 +19,11 @@ const ChangePassword = () => {
   const handleSubmit = event => {
     event.preventDefault();
     // console.log(formState);
+    if (formState.newPassword !== formState.confirmPassword) {
+      toast.warn("Your password and confirmation password do not match.", {
+        position: toast.POSITION.TOP_RIGHT
+      });
+    }
   };
 
   return (
