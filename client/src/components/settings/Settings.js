@@ -2,8 +2,6 @@ import React, { Fragment } from "react";
 // import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 
-import ImageUpload from "../image-upload/ImageUpload";
-
 /*
 Not authenticated should be redirected to log in page
 */
@@ -18,10 +16,7 @@ const Settings = () => {
     <Fragment>
       <div className="jumbotron">
         <h4>Settings</h4>
-        {/* Upload Profile Pic */}
-        <ImageUpload />
         <br />
-
         <Link to="/edit-profile">Edit Profile</Link>
         <br />
         <Link to="/change-password">Change Password</Link>

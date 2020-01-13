@@ -72,9 +72,17 @@ const ImageUpload = props => {
       />
       <div>
         <div>
-          {previewUrl && <img src={previewUrl} alt="Preview" />}
+          {previewUrl && (
+            <img className="rounded-circle" src={previewUrl} alt="Preview" />
+          )}
           {/* {!previewUrl && <p>Please pick an image.</p>} */}
-          {!previewUrl && <img src={NoProfilePic} alt="no profile pic" />}
+          {!previewUrl && (
+            <img
+              className="rounded-circle"
+              src={NoProfilePic}
+              alt="no profile pic"
+            />
+          )}
         </div>
         <button
           className="btn btn-primary"
