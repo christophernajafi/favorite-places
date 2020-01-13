@@ -20,6 +20,8 @@ const Settings = () => {
         <Link to="/edit-profile">Edit Profile</Link>
         <br />
         <Link to="/change-password">Change Password</Link>
+        <br />
+        <Link to="/privacy-and-security">Privacy and Security</Link>
       </div>
     </Fragment>
   );
