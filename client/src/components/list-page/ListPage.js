@@ -22,7 +22,7 @@ const DUMMY_DATA_LISTS = [
   {
     id: 3,
     name: "My Favorite Beaches ",
-    description: "Rose Cove, Caspar",
+    description: "Ross Cove, Baker Beach",
     places: []
   }
 ];

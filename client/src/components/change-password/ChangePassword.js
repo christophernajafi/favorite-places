@@ -2,18 +2,22 @@ import React, { Fragment, useState } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 
 const ChangePassword = () => {
-  // eslint-disable-next-line
-  const [currentPassword, setCurrentPassword] = useState(null);
-  // eslint-disable-next-line
-  const [newPassword, setNewPassword] = useState(null);
-  // eslint-disable-next-line
-  const [confirmPassword, setConfirmPassword] = useState(null);
+  const [formState, setFormState] = useState({
+    currentPassword: "",
+    newPassword: "",
+    confirmPassword: ""
+  });
 
-  // eslint-disable-next-line
-  const handleChange = event => {};
+  const handleChange = event => {
+    setFormState({
+      ...formState,
+      [event.target.name]: [event.target.value]
+    });
+  };
 
   const handleSubmit = event => {
     event.preventDefault();
+    // console.log(formState);
   };
 
   return (
@@ -22,41 +26,47 @@ const ChangePassword = () => {
         <form onSubmit={handleSubmit}>
           <FormGroup controlId="currentPassword" size="lg">
             <FormControl
-              value={currentPassword}
+              value={formState.currentPassword}
               onChange={handleChange}
               type="password"
               placeholder="Current Password"
               required
               name="currentPassword"
-              defaultValue={currentPassword}
+              // defaultValue={formState.currentPassword}
             />
           </FormGroup>
           <FormGroup controlId="newPassword" size="lg">
             <FormControl
-              value={newPassword}
+              value={formState.newPassword}
               onChange={handleChange}
               type="password"
               placeholder="New Password"
               required
               name="newPassword"
-              defaultValue={newPassword}
+              // defaultValue={formState.newPassword}
             />
           </FormGroup>
           <FormGroup controlId="confirmPassword" size="lg">
             <FormControl
-              value={confirmPassword}
+              value={formState.confirmPassword}
               onChange={handleChange}
               type="password"
               placeholder="Confirm Password"
               required
               name="confirmPassword"
-              defaultValue={confirmPassword}
+              // defaultValue={formState.confirmPassword}
             />
           </FormGroup>
           <Button
             block
             size="lg"
-            disabled={!(currentPassword && newPassword && confirmPassword)}
+            disabled={
+              !(
+                formState.currentPassword &&
+                formState.newPassword &&
+                formState.confirmPassword
+              )
+            }
             type="submit"
           >
             Change Password
