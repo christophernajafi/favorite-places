@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 // import { connect } from "react-redux";
-// import { Redirect } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import ImageUpload from "../image-upload/ImageUpload";
 
@@ -23,7 +23,7 @@ const Settings = () => {
         <br />
         Edit Profile
         <br />
-        Change Password
+        <Link to="/change-password">Change Password</Link>
       </div>
     </Fragment>
   );

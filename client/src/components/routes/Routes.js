@@ -12,6 +12,7 @@ import Settings from "../settings/Settings";
 import NotFoundPage from "../not-found-page/NotFoundPage";
 import PasswordReset from "../password-reset/PasswordReset";
 import ListPage from "../list-page/ListPage";
+import ChangePassword from "../change-password/ChangePassword";
 
 // const allVisitorsRoutes=()=>{}
 // const guestOnlyRoutes=()=>{}
@@ -54,6 +55,7 @@ const Routes = props => {
       {/* <Route exact path="/sign-up" component={SignUp} /> */}
       <GuestOnlyRoute path="/sign-up" component={SignUp} />
       <GuestOnlyRoute path="/password-reset" component={PasswordReset} />
+      <Route exact path="/change-password" component={ChangePassword} />
       <Route exact path="/lists" component={Lists} />
       <Route exact path="/lists/:listId" component={ListPage} />
       {/* <AuthOnlyRoute exact path="/lists" component={Lists} /> */}
