@@ -6,8 +6,11 @@ const ChangePassword = () => {
   const [formState, setFormState] = useState({
     currentPassword: "",
     newPassword: "",
-    confirmPassword: ""
+    confirmNewPassword: ""
   });
+
+  // eslint-disable-next-line
+  const { currentPassword, newPassword, confirmNewPassword } = formState;
 
   const handleChange = event => {
     setFormState({
@@ -18,9 +21,7 @@ const ChangePassword = () => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    // eslint-disable-next-line
-    const { currentPassword, newPassword, confirmPassword } = formState;
-    if (newPassword !== confirmPassword) {
+    if (newPassword !== confirmNewPassword) {
       toast.warn("Your new password and confirmation password do not match.", {
         position: toast.POSITION.TOP_RIGHT
       });
@@ -34,47 +35,41 @@ const ChangePassword = () => {
         <form onSubmit={handleSubmit}>
           <FormGroup controlId="currentPassword" size="lg">
             <FormControl
-              value={formState.currentPassword}
+              value={currentPassword}
               onChange={handleChange}
               type="password"
               placeholder="Current Password"
               required
               name="currentPassword"
-              // defaultValue={formState.currentPassword}
+              // defaultValue={currentPassword}
             />
           </FormGroup>
           <FormGroup controlId="newPassword" size="lg">
             <FormControl
-              value={formState.newPassword}
+              value={newPassword}
               onChange={handleChange}
               type="password"
               placeholder="New Password"
               required
               name="newPassword"
-              // defaultValue={formState.newPassword}
+              // defaultValue={newPassword}
             />
           </FormGroup>
-          <FormGroup controlId="confirmPassword" size="lg">
+          <FormGroup controlId="confirmNewPassword" size="lg">
             <FormControl
-              value={formState.confirmPassword}
+              value={confirmNewPassword}
               onChange={handleChange}
               type="password"
-              placeholder="Confirm Password"
+              placeholder="Confirm New Password"
               required
-              name="confirmPassword"
-              // defaultValue={formState.confirmPassword}
+              name="confirmNewPassword"
+              // defaultValue={confirmNewPassword}
             />
           </FormGroup>
           <Button
             block
             size="lg"
-            disabled={
-              !(
-                formState.currentPassword &&
-                formState.newPassword &&
-                formState.confirmPassword
-              )
-            }
+            disabled={!(currentPassword && newPassword && confirmNewPassword)}
             type="submit"
           >
             Change Password

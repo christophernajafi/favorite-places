@@ -7,6 +7,7 @@ const EditProfile = () => {
         <div className="jumbotron">
           <div>
             <p>Name</p>
+            <p>Website</p>
             <p>Bio</p>
             <p>Email</p>
           </div>
