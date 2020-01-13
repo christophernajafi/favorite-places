@@ -4,7 +4,13 @@ const EditProfile = () => {
   return (
     <Fragment>
       <div className="container">
-        <div className="jumbotron">Future Edit Profile Page</div>
+        <div className="jumbotron">
+          <div>
+            <p>Name</p>
+            <p>Bio</p>
+            <p>Email</p>
+          </div>
+        </div>
       </div>
     </Fragment>
   );
