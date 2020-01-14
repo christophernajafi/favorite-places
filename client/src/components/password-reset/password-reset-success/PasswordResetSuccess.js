@@ -1,6 +1,6 @@
 import React from "react";
 
-const ResetEmailSuccess = () => {
+const PasswordResetSuccess = () => {
   const emailAddress = "";
   return (
     <div>
@@ -16,4 +16,4 @@ const ResetEmailSuccess = () => {
   );
 };
 
-export default ResetEmailSuccess;
+export default PasswordResetSuccess;
