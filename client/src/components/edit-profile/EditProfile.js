@@ -21,7 +21,6 @@ const EditProfile = props => {
     });
   };
 
-  // eslint-disable-next-line
   const handleSubmit = event => {
     event.preventDefault();
     // eslint-disable-next-line
