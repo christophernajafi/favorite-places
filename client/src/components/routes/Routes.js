@@ -15,6 +15,7 @@ import ListPage from "../list-page/ListPage";
 import ChangePassword from "../change-password/ChangePassword";
 import EditProfile from "../edit-profile/EditProfile";
 import PrivacyAndSecurity from "../privacy-and-security/PrivacyAndSecurity";
+import UserProfile from "../user-profile/UserProfile";
 
 // const allVisitorsRoutes=()=>{}
 // const guestOnlyRoutes=()=>{}
@@ -63,6 +64,7 @@ const Routes = props => {
       {/* <AuthOnlyRoute exact path="/lists" component={Lists} /> */}
       <Route exact path="/settings" component={Settings} />
       <Route exact path="/edit-profile" component={EditProfile} />
+      <Route exact path="/profile" component={UserProfile} />
       <Route
         exact
         path="/privacy-and-security"

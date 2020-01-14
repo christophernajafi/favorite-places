@@ -32,6 +32,8 @@ const NavbarComponent = props => {
         title={<i className="far fa-user-circle"> Hello</i>}
         id="basic-nav-dropdown"
       >
+        <NavDropdown.Item href="/profile">View Profile</NavDropdown.Item>
+        <NavDropdown.Divider />
         <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
         <NavDropdown.Divider />
         <NavDropdown.Item onClick={logout} href="/">

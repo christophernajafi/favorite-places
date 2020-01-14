@@ -1,20 +1,10 @@
 import React, { Fragment } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Form, Button } from "react-bootstrap";
 
 import ImageUpload from "../image-upload/ImageUpload";
 
-const EditProfile = props => {
-  const save = () => {
-    // eslint-disable-next-line
-    props.history.push("/profile");
-    // save should push to the view profile page
-  };
-
-  const cancel = () => {
-    // eslint-disable-next-line
-    props.history.push("/profile");
-  };
-
+// eslint-disable-next-line
+const UserProfile = props => {
   return (
     <Fragment>
       <div className="container">
@@ -37,12 +27,9 @@ const EditProfile = props => {
             <Form.Label>Email</Form.Label>
             <Form.Control type="email" placeholder="" />
           </Form.Group>
-
-          <Button variant="primary" type="submit" onClick={save}>
-            Save
-          </Button>
-          <Button variant="secondary" type="submit" onClick={cancel}>
-            Cancel
+          {/* <Link to="/edit-profile">Edit Profile</Link> */}
+          <Button variant="primary" type="submit" href="/edit-profile">
+            Edit Profile
           </Button>
         </div>
       </div>
@@ -50,4 +37,4 @@ const EditProfile = props => {
   );
 };
 
-export default EditProfile;
+export default UserProfile;
