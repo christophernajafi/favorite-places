@@ -34,7 +34,7 @@ const NavbarComponent = props => {
       >
         <NavDropdown.Item href="/settings">Settings</NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item onClick={logout} href="#!">
+        <NavDropdown.Item onClick={logout} href="/">
           Log Out
         </NavDropdown.Item>
       </NavDropdown>
