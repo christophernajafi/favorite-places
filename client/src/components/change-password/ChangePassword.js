@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const ChangePassword = () => {
   const [formState, setFormState] = useState({
@@ -71,6 +72,9 @@ const ChangePassword = () => {
             Change Password
           </Button>
         </form>
+        <p className="my-1 text-center">
+          Back to <Link to="/settings">Settings</Link>
+        </p>
       </div>
     </Fragment>
   );
