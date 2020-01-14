@@ -1,13 +1,32 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { Button, Form } from "react-bootstrap";
 
 import ImageUpload from "../image-upload/ImageUpload";
 
 const EditProfile = props => {
-  const save = () => {
+  // eslint-disable-next-line
+  const [formState, setFormState] = useState({
+    name: "",
+    website: "",
+    bio: "",
+    email: ""
+  });
+
+  const { name, website, bio, email } = formState;
+
+  const handleChange = event => {
+    setFormState({
+      ...formState,
+      [event.target.name]: event.target.value
+    });
+  };
+
+  // eslint-disable-next-line
+  const handleSubmit = event => {
+    event.preventDefault();
     // eslint-disable-next-line
     props.history.push("/profile");
-    // save should push to the view profile page
+    // console.log("formState: ", formState);
   };
 
   const cancel = () => {
@@ -21,29 +40,54 @@ const EditProfile = props => {
         <div className="jumbotron">
           <ImageUpload />
           <p />
-          <Form.Group controlId="name">
-            <Form.Label>Name</Form.Label>
-            <Form.Control type="text" placeholder="" />
-          </Form.Group>
-          <Form.Group controlId="website">
-            <Form.Label>Website</Form.Label>
-            <Form.Control type="text" placeholder="" />
-          </Form.Group>
-          <Form.Group controlId="bio">
-            <Form.Label>Bio</Form.Label>
-            <Form.Control type="text" placeholder="" />
-          </Form.Group>
-          <Form.Group controlId="email">
-            <Form.Label>Email</Form.Label>
-            <Form.Control type="email" placeholder="" />
-          </Form.Group>
-
-          <Button variant="primary" type="submit" onClick={save}>
-            Save
-          </Button>
-          <Button variant="secondary" type="submit" onClick={cancel}>
-            Cancel
-          </Button>
+          <form onSubmit={handleSubmit}>
+            <Form.Group controlId="name">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                value={name}
+                type="text"
+                placeholder="Enter name"
+                onChange={handleChange}
+                name="name"
+              />
+            </Form.Group>
+            <Form.Group controlId="website">
+              <Form.Label>Website</Form.Label>
+              <Form.Control
+                value={website}
+                type="text"
+                placeholder="Enter website"
+                onChange={handleChange}
+                name="website"
+              />
+            </Form.Group>
+            <Form.Group controlId="bio">
+              <Form.Label>Bio</Form.Label>
+              <Form.Control
+                value={bio}
+                type="text"
+                placeholder="Enter bio"
+                onChange={handleChange}
+                name="bio"
+              />
+            </Form.Group>
+            <Form.Group controlId="email">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                value={email}
+                type="email"
+                placeholder="Enter email address"
+                onChange={handleChange}
+                name="email"
+              />
+            </Form.Group>
+            <Button variant="primary" type="submit">
+              Save
+            </Button>
+            <Button variant="secondary" type="button" onClick={cancel}>
+              Cancel
+            </Button>
+          </form>
         </div>
       </div>
     </Fragment>
