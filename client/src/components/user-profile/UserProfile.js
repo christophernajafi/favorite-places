@@ -18,7 +18,7 @@ const UserProfile = props => {
           </p>
           <p className="font-weight-bold">Name</p>
           <p className="font-weight-bold">Website</p>
-          <p className="font-weight-bold">Website</p>
+          <p className="font-weight-bold">Bio</p>
           <p className="font-weight-bold">Email</p>
           <Button variant="primary" type="submit" href="/edit-profile">
             Edit Profile
