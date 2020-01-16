@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
-// const axios = require("axios");
+
+const List = require("../models/List");
 
 /*
   GET a single list
@@ -25,8 +26,21 @@ router.get("/:id", (req, res, next) => {
 });
 
 // create a single list
-router.post("/", (req, res, next) => {
-  console.log("CREATE A SINGLE LIST");
+router.post("/", async (req, res, next) => {
+  const { title, description } = req.body;
+  try {
+    console.log("CREATE A SINGLE LIST");
+
+    let newList = await new List({ title, description });
+
+    console.log("newList: ", newList);
+
+    await newList.save();
+  } catch (err) {
+    console.error(err.message);
+    // res.status(500).send("Server Error");
+    return next(err);
+  }
 });
 
 // update a single list
