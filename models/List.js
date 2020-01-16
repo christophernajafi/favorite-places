@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const ListSchema = mongoose.Schema({
+const List = mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "users"
@@ -16,10 +16,4 @@ const ListSchema = mongoose.Schema({
   places: []
 });
 
-module.exports = mongoose.model("list", ListSchema);
-
-/*
-	User
-	Title
-	Place, an array
-	*/
+module.exports = mongoose.model("List", List);

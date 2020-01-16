@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const PlaceSchema = mongoose.Schema({
+const Place = mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "users"
@@ -33,7 +33,7 @@ const PlaceSchema = mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model("place", PlaceSchema);
+module.exports = mongoose.model("Place", Place);
 
 /*
   Name
