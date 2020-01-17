@@ -31,15 +31,17 @@ router.post("/", async (req, res, next) => {
   try {
     console.log("CREATE A SINGLE LIST");
 
-    let newList = await new List({ title, description });
+    let newList = await new List({ title, description, user: req.user.id });
 
     console.log("newList: ", newList);
 
-    await newList.save();
+    const list = await newList.save();
+
+    res.json(list);
   } catch (err) {
     console.error(err.message);
-    // res.status(500).send("Server Error");
-    return next(err);
+    res.status(500).send("Server Error");
+    // return next(err);
   }
 });
 
