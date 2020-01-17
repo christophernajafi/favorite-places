@@ -86,6 +86,7 @@ router.put("/", async (req, res) => {
 });
 
 // delete a single list
+// also need to delete all places associated with the list
 router.delete("/:id", async (req, res) => {
   try {
     console.log("DELETE A SINGLE LIST");

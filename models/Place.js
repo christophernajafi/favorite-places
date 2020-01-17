@@ -5,6 +5,10 @@ const Place = mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "users"
   },
+  list: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "lists"
+  },
   name: {
     type: String,
     required: true

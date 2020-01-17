@@ -12,8 +12,7 @@ const List = mongoose.Schema({
   description: {
     type: String,
     require: true
-  },
-  places: []
+  }
 });
 
 module.exports = mongoose.model("List", List);
