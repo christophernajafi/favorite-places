@@ -34,6 +34,10 @@ const Place = mongoose.Schema({
   yelpId: {
     type: Number,
     required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 

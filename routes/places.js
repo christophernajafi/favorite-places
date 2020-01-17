@@ -20,6 +20,26 @@ router.get("/", async (req, res) => {
 // future route for mobile app
 // get all places belonging to a user within a mile radius
 
+// create a single place
+router.post("/", async (req, res) => {
+  const { title, description } = req.body;
+  try {
+    console.log("CREATE A SINGLE PLACE");
+
+    const newPlace = await new Place({ title, description, user: req.user.id });
+
+    console.log("newPlace: ", newPlace);
+
+    const place = await newPlace.save();
+
+    res.json(place);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+    // return next(err);
+  }
+});
+
 // delete a single place
 router.delete("/:id", async (req, res) => {
   try {

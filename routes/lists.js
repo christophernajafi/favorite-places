@@ -49,7 +49,7 @@ router.post("/", async (req, res) => {
   try {
     console.log("CREATE A SINGLE LIST");
 
-    let newList = await new List({ title, description, user: req.user.id });
+    const newList = await new List({ title, description, user: req.user.id });
 
     console.log("newList: ", newList);
 
@@ -90,7 +90,7 @@ router.put("/", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     console.log("DELETE A SINGLE LIST");
-    let list = await List.findById(req.params.id);
+    const list = await List.findById(req.params.id);
     if (!list) return res.status(404).json({ msg: "List not found" });
     // Make sure user owns contact
     if (list.user.toString() !== req.user.id) {
