@@ -15,18 +15,27 @@ const List = require("../models/List");
   Yelp ID
 */
 
-// get all lists
-router.get("/", (req, res, next) => {
-  console.log("GET ALL LISTS");
+// get all lists from a user
+router.get("/", async (req, res) => {
+  try {
+    console.log("GET ALL LISTS");
+    const lists = await List.find({ user: req.user.id }).sort({
+      date: -1
+    });
+    res.json(lists);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
 });
 
 // get a single list
-router.get("/:id", (req, res, next) => {
+router.get("/:id", (req, res) => {
   console.log("GET A SINGLE LIST");
 });
 
 // create a single list
-router.post("/", async (req, res, next) => {
+router.post("/", async (req, res) => {
   const { title, description } = req.body;
   try {
     console.log("CREATE A SINGLE LIST");
@@ -46,13 +55,27 @@ router.post("/", async (req, res, next) => {
 });
 
 // update a single list
-router.put("/", (req, res, next) => {
+router.put("/", (req, res) => {
   console.log("UPDATE A SINGLE LIST");
 });
 
 // delete a single list
-router.delete("/", (req, res, next) => {
+router.delete("/:id", async (req, res) => {
   console.log("DELETE A SINGLE LIST");
+
+  try {
+    let list = await List.findById(req.params.id);
+    if (!list) return res.status(404).json({ msg: "List not found" });
+    // Make sure user owns contact
+    if (list.user.toString() !== req.user.id) {
+      return res.status(401).json({ msg: "Not authorized" });
+    }
+    await List.findByIdAndRemove(req.params.id);
+    res.json({ msg: "List removed" });
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
 });
 
 module.exports = router;
