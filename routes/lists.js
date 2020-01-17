@@ -30,8 +30,17 @@ router.get("/", async (req, res) => {
 });
 
 // get a single list
-router.get("/:id", (req, res) => {
-  console.log("GET A SINGLE LIST");
+router.get("/:id", async (req, res) => {
+  const listId = req.params.id;
+
+  try {
+    console.log("GET A SINGLE LIST");
+    const list = await List.findById(listId);
+    res.json(list);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
 });
 
 // create a single list
@@ -55,15 +64,31 @@ router.post("/", async (req, res) => {
 });
 
 // update a single list
-router.put("/", (req, res) => {
-  console.log("UPDATE A SINGLE LIST");
+router.put("/", async (req, res) => {
+  const listId = req.params.id;
+
+  const { title, description } = req.body;
+
+  try {
+    console.log("UPDATE A SINGLE LIST");
+    const list = await List.findById(listId);
+
+    list.title = title;
+    list.description = description;
+
+    const updatedList = await list.save();
+
+    res.json(updatedList);
+  } catch (err) {
+    console.error(err.message);
+    res.status(500).send("Server Error");
+  }
 });
 
 // delete a single list
 router.delete("/:id", async (req, res) => {
-  console.log("DELETE A SINGLE LIST");
-
   try {
+    console.log("DELETE A SINGLE LIST");
     let list = await List.findById(req.params.id);
     if (!list) return res.status(404).json({ msg: "List not found" });
     // Make sure user owns contact
