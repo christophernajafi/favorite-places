@@ -8,7 +8,7 @@ import { login } from "../../redux/reducers/authReducer";
 import { setAlert } from "../../redux/reducers/alertReducer";
 import "./log-in.css";
 
-// convert to function
+// convert to functional component with hooks
 
 class LogIn extends Component {
   constructor(props) {

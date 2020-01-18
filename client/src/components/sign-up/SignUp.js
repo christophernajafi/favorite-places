@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 // import { register } from "../../redux/reducers/authReducer";
 import "./sign-up.css";
 
-// convert to function
+// convert to functional component with hooks
 
 class SignUp extends Component {
   constructor(props) {

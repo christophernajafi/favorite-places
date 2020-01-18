@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 import { getSearchResults } from "../../redux/reducers/searchResultsReducer";
 
-// convert to function
+// convert to functional component with hooks
 
 class SearchBar extends Component {
   state = {

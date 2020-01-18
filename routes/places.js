@@ -17,8 +17,8 @@ router.get("/", async (req, res) => {
   }
 });
 
-// future route for mobile app
 // get all places belonging to a user within a mile radius
+// future route for mobile app
 
 // create a single place
 router.post("/", async (req, res) => {
