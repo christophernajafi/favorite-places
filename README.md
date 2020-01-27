@@ -28,6 +28,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - View places from a list on a map
 - Notification toasts for invalid input
 - Protected routes
+- Tests using Jest, Enzyme, and Puppeteer
 
 ## Future Features
 
@@ -48,7 +49,6 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Weather report for a location using AccuWeather API
 - Admin page and controls
 - Webpack
-- Tests using Jest, Enzyme, and Puppeteer or Cypress
 - CI/CD using CircleCI
 - Storybook
 - Next.js
