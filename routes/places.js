@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
     const places = await Place.find({ list: req.list.id }).sort({
       date: -1
     });
-    res.json(places);
+    res.status(200).json(places);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
@@ -32,7 +32,7 @@ router.post("/", async (req, res) => {
 
     const place = await newPlace.save();
 
-    res.json(place);
+    res.status(201).json(place);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
@@ -46,7 +46,7 @@ router.delete("/:id", async (req, res) => {
     console.log("GET A SINGLE PLACE");
 
     await Place.findByIdAndRemove(req.params.id);
-    res.json({ msg: "Place removed" });
+    res.status(200).json({ msg: "Place removed" });
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");

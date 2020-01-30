@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
     const lists = await List.find({ user: req.user.id }).sort({
       date: -1
     });
-    res.json(lists);
+    res.status(200).json(lists);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
@@ -36,7 +36,7 @@ router.get("/:id", async (req, res) => {
   try {
     console.log("GET A SINGLE LIST");
     const list = await List.findById(listId);
-    res.json(list);
+    res.status(200).json(list);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
@@ -55,7 +55,7 @@ router.post("/", async (req, res) => {
 
     const list = await newList.save();
 
-    res.json(list);
+    res.status(201).json(list);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
@@ -78,7 +78,7 @@ router.put("/", async (req, res) => {
 
     const updatedList = await list.save();
 
-    res.json(updatedList);
+    res.status(200).json(updatedList);
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
@@ -97,7 +97,7 @@ router.delete("/:id", async (req, res) => {
       return res.status(401).json({ msg: "Not authorized" });
     }
     await List.findByIdAndRemove(req.params.id);
-    res.json({ msg: "List removed" });
+    res.status(200).json({ msg: "List removed" });
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server Error");
