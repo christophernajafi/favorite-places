@@ -50,6 +50,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Admin page and controls
 - Webpack
 - CI/CD using CircleCI
+- Documentation using Swagger
 - Storybook
 - Next.js
 - Turn into a PWA
