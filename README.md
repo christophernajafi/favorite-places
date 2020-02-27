@@ -11,7 +11,9 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Bootstrap
 - React Bootstrap
 - React-Map-GL
+- Font Awesome
 - Authentication using JWT and local storage
+- Google Analytics
 
 ### Back End
 
