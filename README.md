@@ -4,17 +4,22 @@ A Single-Page Application that enables a user to search for venues, add them to 
 
 ## Tech Stack
 
+### Front End
+
 - React
 - Redux
 - Bootstrap
 - React Bootstrap
+- React-Map-GL
 - Authentication using JWT and local storage
+
+### Back End
+
 - Node.js
 - Express
 - MongoDB
 - Yelp Fusion API
 - Mapbox API
-- React-Map-GL
 - Nodemailer
 
 ## Features
