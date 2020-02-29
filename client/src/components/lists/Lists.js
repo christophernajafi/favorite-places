@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { Alert } from "react-bootstrap";
 
-import ListItem from "./lists-item/ListsItem";
-import CreateListModal from "./create-list/CreateListModal";
+import ListItem from "../lists-item/ListsItem";
+import CreateListModal from "../create-list/CreateListModal";
 import "./lists.css";
 
 /*

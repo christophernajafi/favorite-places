@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import { Alert } from "react-bootstrap";
 
 // eslint-disable-next-line
-import ListPageItem from "./list-page-item/ListPageItem";
+import ListPageItem from "../list-page-item/ListPageItem";
 import Map from "../map/Map";
 
 // eslint-disable-next-line
