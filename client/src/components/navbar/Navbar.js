@@ -44,16 +44,18 @@ const NavbarComponent = props => {
   );
 
   return (
-    <Navbar bg="light" expand="lg" sticky="top">
+    <Navbar bg="light" expand="lg" sticky="top" className="navbar">
       <Navbar.Brand href="/">Favorite Places</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
+        <Nav className="mr-auto" />
+        {searchResults.length > 0 && <SearchBar />}
+        <Nav className="mr-auto" />
+        <Nav>
           <Nav.Link href="/about">About</Nav.Link>
           {!isAuthenticated && guestLinks}
           {isAuthenticated && authLinks}
         </Nav>
-        {searchResults.length > 0 && <SearchBar />}
       </Navbar.Collapse>
     </Navbar>
   );
