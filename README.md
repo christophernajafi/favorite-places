@@ -84,3 +84,5 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - CLOUDINARY_API_SECRET
 - CLOUDINARY_CLOUD_NAME
 - YELP_API_KEY
+- MONGO_URI
+- JWT_SECRET
