@@ -2,12 +2,18 @@ const express = require("express");
 const connectDB = require("./config/db");
 const path = require("path");
 const app = express();
+const morgan = require("morgan");
 
 // Connect database
 connectDB();
 
 // Init Middleware
 app.use(express.json({ extended: false }));
+
+// Dev logging middleware
+if (process.env.NODE_ENV !== "production") {
+  app.use(morgan("dev"));
+}
 
 // Define routes
 app.use("/api/yelp", require("./routes/yelp"));
