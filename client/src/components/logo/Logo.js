@@ -5,8 +5,14 @@ import "./logo.css";
 const Logo = () => {
   return (
     <Fragment>
-      <div>
-        <h1>FAVORITE PLACES</h1>
+      <div className="logo">
+        <a href="/" className="logo-btn">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          FAVORITE PLACES
+        </a>
       </div>
     </Fragment>
   );

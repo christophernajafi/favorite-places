@@ -3,18 +3,18 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
-import FrontPage from "../front-page/FrontPage";
 import About from "../about/About";
-import LogIn from "../log-in/LogIn";
-import SignUp from "../sign-up/SignUp";
-import Lists from "../lists/Lists";
-import Settings from "../settings/Settings";
-import NotFoundPage from "../not-found-page/NotFoundPage";
-import PasswordReset from "../password-reset/PasswordReset";
-import ListPage from "../list-page/ListPage";
 import ChangePassword from "../change-password/ChangePassword";
 import EditProfile from "../edit-profile/EditProfile";
+import HomePage from "../home-page/HomePage";
+import Lists from "../lists/Lists";
+import ListPage from "../list-page/ListPage";
+import LogIn from "../log-in/LogIn";
+import NotFoundPage from "../not-found-page/NotFoundPage";
+import PasswordReset from "../password-reset/PasswordReset";
 import PrivacyAndSecurity from "../privacy-and-security/PrivacyAndSecurity";
+import Settings from "../settings/Settings";
+import SignUp from "../sign-up/SignUp";
 import UserProfile from "../user-profile/UserProfile";
 
 // const allVisitorsRoutes=()=>{}
@@ -51,7 +51,7 @@ const Routes = props => {
 
   return (
     <Switch>
-      <Route exact path="/" component={FrontPage} />
+      <Route exact path="/" component={HomePage} />
       <Route exact path="/about" component={About} />
       {/* <Route exact path="/log-in" component={LogIn} /> */}
       <GuestOnlyRoute path="/log-in" component={LogIn} />

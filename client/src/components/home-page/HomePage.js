@@ -4,10 +4,10 @@ import PropTypes from "prop-types";
 
 import SearchBar from "../search-bar/SearchBar";
 import SearchResults from "../search-results/SearchResults";
-import "./front-page.css";
+import "./home-page.css";
 // import Logo from "../logo/Logo";
 
-const FrontPage = props => {
+const HomePage = props => {
   const { searchResults } = props;
   return (
     <Fragment>
@@ -30,8 +30,8 @@ const mapStateToProps = state => {
   };
 };
 
-FrontPage.propTypes = {
+HomePage.propTypes = {
   searchResults: PropTypes.array
 };
 
-export default connect(mapStateToProps)(FrontPage);
+export default connect(mapStateToProps)(HomePage);
