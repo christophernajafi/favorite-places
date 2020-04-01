@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const Place = require("../models/Place");
+const Place = require("../db/models/Place");
 
 // get all places in a list
 router.get("/", async (req, res) => {

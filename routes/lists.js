@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 
-const List = require("../models/List");
+const List = require("../db/models/List");
 
 /*
   GET a single list

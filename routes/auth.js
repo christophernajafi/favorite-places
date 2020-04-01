@@ -5,7 +5,7 @@ const jwt = require("jsonwebtoken");
 const { check, validationResult } = require("express-validator");
 
 const auth = require("../middleware/auth");
-const User = require("../models/User");
+const User = require("../db/models/User");
 
 require("dotenv").config();
 const jwtSecret = process.env.JWT_SECRET;
