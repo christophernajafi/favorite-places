@@ -1,11 +1,12 @@
 const express = require("express");
-const connectDB = require("./config/db");
 const path = require("path");
 const app = express();
 const morgan = require("morgan");
 
+const connectMongoDb = require("./db/mongoDb");
+
 // Connect database
-connectDB();
+connectMongoDb();
 
 // Init Middleware
 app.use(express.json({ extended: false }));

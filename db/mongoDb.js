@@ -10,7 +10,7 @@ const options = {
   useUnifiedTopology: true
 };
 
-const connectDB = async () => {
+const connectMongoDb = async () => {
   try {
     const { connection } = await mongoose.connect(mongoURI, options);
     console.log("############################################");
@@ -24,4 +24,4 @@ const connectDB = async () => {
   }
 };
 
-module.exports = connectDB;
+module.exports = connectMongoDb;
