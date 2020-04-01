@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 const morgan = require("morgan");
 
-const connectMongoDb = require("./db/mongoDb");
+const connectMongoDb = require("./db");
 
 // Connect database
 connectMongoDb();
