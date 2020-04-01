@@ -16,7 +16,7 @@ import { loadUser } from "./redux/reducers/authReducer";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// import "./App.css";
+import "./App.css";
 // import "bootstrap/dist/css/bootstrap.min.css";
 // import "mapbox-gl/dist/mapbox-gl.css";
 

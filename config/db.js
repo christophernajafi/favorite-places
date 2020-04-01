@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
-const config = require("config");
-const mongoURI = config.get("mongoURI");
+
+require("dotenv").config();
+const mongoURI = process.env.MONGO_URI;
 
 const options = {
   useNewUrlParser: true,
@@ -11,9 +12,10 @@ const options = {
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(mongoURI, options);
+    const { connection } = await mongoose.connect(mongoURI, options);
     console.log("############################################");
     console.log("------------ MongoDB Connected -------------");
+    console.log(`-- ${connection.host} --`);
     console.log("############################################");
   } catch (err) {
     console.error(err.message);
