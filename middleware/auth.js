@@ -23,7 +23,7 @@ module.exports = async function(req, res, next) {
       }
     });
   } catch (err) {
-    console.error("something wrong with auth middleware");
+    console.error("Problem with auth middleware");
     res.status(500).json({ msg: "Server Error" });
   }
 };
