@@ -35,15 +35,16 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - View places from a list on a map
 - Notification toasts for invalid input
 - Protected routes
-- Tests using Jest, Enzyme, and Puppeteer
+- Rate limiting
 
 ## Future Features
 
+- Tests using Jest, Enzyme, and Puppeteer
 - Filter lists by name
 - Autocomplete in search bar
 - Spell correction for misspelled search terms and location
-- Sign up with Facebook
-- Sign up with Google
+- Log in and sign up with Facebook
+- Log in and sign up with Google
 - Password reset using Nodemailer and SendGrid
 - Email verification at sign up
 - Strong password enforcement
@@ -51,7 +52,6 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - styled-components
 - Ability to upload a profile pic using Cloudinary API
 - User profile page
-- Rate limiting
 - Protection from HTTP parameter pollution
 - Weather report for a location using AccuWeather API
 - Admin page and controls
