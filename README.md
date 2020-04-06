@@ -36,6 +36,7 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Notification toasts for invalid input
 - Protected routes
 - Rate limiting
+- Password reset using Nodemailer and SendGrid
 
 ## Future Features
 
@@ -45,7 +46,6 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Spell correction for misspelled search terms and location
 - Log in and sign up with Facebook
 - Log in and sign up with Google
-- Password reset using Nodemailer and SendGrid
 - Email verification at sign up
 - Strong password enforcement
 - Settings page for user to change name, email, or password
