@@ -2,19 +2,52 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const morgan = require("morgan");
+const compression = require("compression");
+const mongoSanitize = require("express-mongo-sanitize");
+const helmet = require("helmet");
+const xss = require("xss-clean");
+const rateLimit = require("express-rate-limit");
+const hpp = require("hpp");
+const cors = require("cors");
 
 const connectMongoDb = require("./db");
 
-// Connect database
+// Connect to database
 connectMongoDb();
 
-// Init Middleware
-app.use(express.json({ extended: false }));
-
-// Dev logging middleware
+// Logging middleware
 if (process.env.NODE_ENV !== "production") {
   app.use(morgan("dev"));
 }
+
+// Body parsing middleware
+app.use(express.json({ extended: false }));
+
+// Compression middleware
+app.use(compression());
+
+// Sanitize data
+app.use(mongoSanitize());
+
+// Set security headers
+app.use(helmet());
+
+// Prevent XSS attacks
+app.use(xss());
+
+// Rate limiting
+const limiter = rateLimit({
+  // 100 requests per 10 minutes
+  windowMs: 10 * 60 * 1000,
+  max: 100,
+});
+app.use(limiter);
+
+// Prevent http param pollution
+app.use(hpp());
+
+// Enable CORS
+app.use(cors());
 
 // Define routes
 app.use("/api/yelp", require("./routes/yelp"));
