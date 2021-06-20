@@ -2,27 +2,9 @@
 
 A Single-Page Application that enables a user to search for venues, add them to a list, and view their locations on a map.
 
-## Tech Stack
+## Deployed
 
-### Front End
-
-- React
-- Redux
-- Bootstrap
-- React Bootstrap
-- React-Map-GL
-- Font Awesome
-- Authentication using JWT and local storage
-- Google Analytics
-
-### Back End
-
-- Node.js
-- Express
-- MongoDB
-- Yelp Fusion API
-- Mapbox API
-- Nodemailer
+<https://favorite-places-cn.herokuapp.com/>
 
 ## Features
 
@@ -67,11 +49,33 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - Two-factor authentication
 - Software design document
 
-## Deployed
+## Technology Stack
 
-<https://favorite-places-cn.herokuapp.com/>
+### Back End
 
-## Environmental Variables
+- Node.js
+- Express
+- MongoDB
+- Yelp Fusion API
+- Mapbox API
+- Nodemailer
+
+### Front End
+
+- React
+- Redux
+- Bootstrap
+- React Bootstrap
+- React-Map-GL
+- Font Awesome
+- Authentication using JWT and local storage
+- Google Analytics
+
+## Developer
+
+[Christopher Najafi](https://www.chrisnajafi.com/)
+
+<!-- ## Environmental Variables
 
 ### Client
 
@@ -85,4 +89,4 @@ A Single-Page Application that enables a user to search for venues, add them to 
 - CLOUDINARY_CLOUD_NAME
 - YELP_API_KEY
 - MONGO_URI
-- JWT_SECRET
+- JWT_SECRET -->
